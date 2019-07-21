@@ -1,0 +1,3 @@
+spring:
+  application:
+    name: eureka-server     #服务名称,自定义
