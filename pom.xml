@@ -30,6 +30,8 @@
         <module>cloud-zuul</module>
         <module>cloud-config</module>
         <module>cloud-config-client</module>
+        <module>cloud-zipkin</module>
+        <module>cloud-zipkin1</module>
     </modules>
 
     <dependencies>
