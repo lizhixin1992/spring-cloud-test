@@ -9,6 +9,8 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/cloud-client/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-zipkin/pom.xml" />
+        <option value="$PROJECT_DIR$/cloud-zipkin1/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

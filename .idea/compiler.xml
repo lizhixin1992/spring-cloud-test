@@ -11,11 +11,14 @@
         <module name="cloud-config-client" />
         <module name="cloud-discovery" />
         <module name="cloud-provider" />
+        <module name="cloud-zipkin" />
+        <module name="cloud-zipkin1" />
         <module name="cloud-zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="cloud-discovery-1" target="1.8" />
+      <module name="cloud-zipkin (1)" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +29,9 @@
       <module name="cloud-discovery" options="-parameters" />
       <module name="cloud-discovery-1" options="-parameters" />
       <module name="cloud-provider" options="-parameters" />
+      <module name="cloud-zipkin" options="-parameters" />
+      <module name="cloud-zipkin (1)" options="-parameters" />
+      <module name="cloud-zipkin1" options="-parameters" />
       <module name="cloud-zuul" options="-parameters" />
       <module name="spring-cloud-test" options="-parameters" />
     </option>

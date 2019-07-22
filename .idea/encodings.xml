@@ -8,6 +8,10 @@
     <file url="file://$PROJECT_DIR$/cloud-discovery" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-discovery-1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-zipkin" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-zipkin-1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-zipkin1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cloud-zipkin1" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/cloud-zuul" charset="UTF-8" />
   </component>
 </project>
