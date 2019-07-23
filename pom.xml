@@ -32,7 +32,6 @@
         <module>cloud-config-client</module>
         <module>cloud-zipkin</module>
         <module>cloud-zipkin1</module>
-        <module>cloud-hystrix-dashboard</module>
     </modules>
 
     <dependencies>
