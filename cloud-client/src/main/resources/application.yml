@@ -1,8 +1,15 @@
 server:
   port: 8082
+
 spring:
   application:
     name: cloud-client
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8099
+      eager: true
+
 eureka:
   client:
     serviceUrl:
