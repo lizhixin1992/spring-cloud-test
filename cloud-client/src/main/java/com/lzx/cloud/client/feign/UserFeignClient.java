@@ -17,10 +17,10 @@ import java.util.List;
  **/
 @FeignClient(name = "cloud-provider", fallbackFactory = FeignClientFallbackFactory.class)
 public interface UserFeignClient {
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "/{id}")
     public User findById(@PathVariable("id") Long id);
 
-    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    @GetMapping(value = "/all")
     public List<User> saveUser();
 }
 
