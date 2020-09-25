@@ -1,11 +1,20 @@
 package com.lzx.cloud.client;
 
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.time.Instant;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 
@@ -113,6 +122,80 @@ public class CloudClientApplicationTests {
         method_and(s -> s.contains("O"), s -> s.contains("h"));
         method_or(s -> s.contains("O"), s -> s.contains("h"));
         method_negate(s -> s.contains("O"));
+    }
+
+    @Test
+    public void testTobData(){
+        Map<String, Object> map = new HashMap<>(10);
+        map.put("accesskey", "lizhixinvpn");
+        map.put("accessid", "VMS");
+        map.put("time", Instant.now().toEpochMilli());
+        map.put("channelId", "EPGC1386744804340101");
+        map.put("channelName", "CCTV");
+        String sign = createSign(map,"");
+        map.put("sign", sign);
+        String url = mapToUrlParams(map);
+        System.out.println(url);
+    }
+
+    /**
+     * 签名生成
+     *
+     * @param params    参数map
+     * @param secretKey 加密key
+     */
+    public String createSign(Map<String, Object> params, String secretKey) {
+        StringBuilder urlStr = new StringBuilder();
+        // 将参数以参数名的字典升序排序
+        Map<String, Object> sortParams = new TreeMap<>(params);
+        // 遍历排序的字典,并拼接"key=value"格式
+        for (Map.Entry<String, Object> entry : sortParams.entrySet()) {
+            String key = entry.getKey();
+            String value = entry.getValue().toString().trim();
+            //过滤签名字段，签名字段不进行生成签名
+            if (!StringUtils.isEmpty(value) && !"sign".equals(key)) {
+                urlStr.append("&").append(key).append("=").append(value);
+            }
+        }
+        //url最后拼接secretKey
+        urlStr.append("&").append(secretKey);
+        return sha1Hex(urlStr.toString().replaceFirst("&", ""));
+    }
+
+    /**
+     * sha1Hex加密
+     */
+    public String sha1Hex(String str) {
+        try {
+            if(StringUtils.isNotBlank(str)){
+                return DigestUtils.sha1Hex(str).toUpperCase();
+            }else {
+                return null;
+            }
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    /**
+     * 将map转换成url
+     *
+     * @param map
+     */
+    public String mapToUrlParams(Map<String, Object> map) {
+        if (map == null) {
+            return "";
+        }
+        StringBuffer sb = new StringBuffer();
+        for (Map.Entry<String, Object> entry : map.entrySet()) {
+            sb.append(entry.getKey() + "=" + entry.getValue());
+            sb.append("&");
+        }
+        String s = sb.toString();
+        if (s.endsWith("&")) {
+            s = StringUtils.substringBeforeLast(s, "&");
+        }
+        return s;
     }
 
 }
