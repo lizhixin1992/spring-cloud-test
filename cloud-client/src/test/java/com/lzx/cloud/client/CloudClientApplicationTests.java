@@ -234,9 +234,9 @@ public class CloudClientApplicationTests {
 //        Method[] methods = clazz.getMethods();
 //        Arrays.stream(methods).map(Method::getName).forEach(x -> System.out.println(x));
 //        System.out.println("-------------------------------------");
-//        String value = reflectGetMethod(user, "name");
-//        System.out.println("reflectGetMethod----外------" + value);
-        reflectGetMethod1(user,"name");
+        String value = reflectGetMethod(user, "name");
+        System.out.println("reflectGetMethod----外------" + value);
+//        reflectGetMethod1(user,"name");
     }
 
     /**
@@ -245,14 +245,13 @@ public class CloudClientApplicationTests {
      **/
     private String reflectGetMethod(User user, String fieldName) {
         try {
+            Map<String, PropertyDescriptor> map = new LinkedHashMap<>();
             BeanInfo beanInfo = Introspector.getBeanInfo(user.getClass());
-            List<PropertyDescriptor> descriptors = Arrays.stream(beanInfo.getPropertyDescriptors()).filter(p -> {
+            Arrays.stream(beanInfo.getPropertyDescriptors()).filter(p -> {
                 String name = p.getName();
                 //过滤掉不需要修改的属性
                 return !"class".equals(name);
-            }).collect(Collectors.toList());
-            Map<String, PropertyDescriptor> map = new LinkedHashMap<>(descriptors.size());
-            descriptors.stream().forEach(x -> map.put(x.getName(), x));
+            }).collect(Collectors.toList()).forEach(x -> map.put(x.getName(), x));
             if(map.get(fieldName) != null){
                 PropertyDescriptor descriptor = map.get(fieldName);
                 Method readMethod = descriptor.getReadMethod();
