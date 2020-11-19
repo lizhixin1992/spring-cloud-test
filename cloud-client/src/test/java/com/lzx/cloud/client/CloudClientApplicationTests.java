@@ -23,11 +23,13 @@ import java.lang.reflect.Method;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.TreeMap;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -304,7 +306,35 @@ public class CloudClientApplicationTests {
                     break;
             }
         }
+    }
 
+    @Test
+    public void testListSub(){
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 50; i++) {
+            list.add(i);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            List<Integer> a = list.subList(i * 5, (i + 1) * 5);
+            a.forEach(x -> System.out.println(x));
+            System.out.println("---------------------------");
+        }
+    }
+
+    @Test
+    public void testJSON(){
+        User user = new User();
+        user.setId(1L);
+        user.setName("test");
+        user.setAge(12);
+//        user.setUsername("test");
+        user.setRequestId("12121212");
+        user.setBalance(12.0);
+//        String jsonn = JSO
+        String b = null;
+        String a = Optional.ofNullable(b).orElse("");
+        System.out.println(a);
     }
 
 }
