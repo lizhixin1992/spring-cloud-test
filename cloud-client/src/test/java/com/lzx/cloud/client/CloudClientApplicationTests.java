@@ -9,8 +9,11 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.BeanUtils;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.annotation.Resource;
 import javax.management.ObjectName;
 import javax.validation.constraints.NotNull;
 import java.beans.BeanInfo;
@@ -30,6 +33,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -40,6 +44,9 @@ import java.util.stream.Collectors;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class CloudClientApplicationTests {
+
+    @Resource
+    private RedisTemplate<String,Object> redisTemplate;
 
     @Test
     public void contextLoads() {
@@ -335,6 +342,33 @@ public class CloudClientApplicationTests {
         String b = null;
         String a = Optional.ofNullable(b).orElse("");
         System.out.println(a);
+    }
+
+    @Test
+    public void testList() {
+        Map<Integer, Integer> map = new LinkedHashMap<>();
+
+        for (Integer a : map.keySet()) {
+            System.out.println(a);
+        }
+    }
+
+    @Test
+    public void testList1(){
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            list.add(i);
+        }
+        System.out.println(list.size());
+        System.out.println(list.subList(0,15));
+    }
+
+    @Test
+    public void testRedisTemplate(){
+        Set<String> keys = redisTemplate.keys("navigation#*");
+        System.out.println(keys);
+//        Long delete = stringRedisTemplate.delete(keys);
+//        System.out.println(delete);
     }
 
 }
