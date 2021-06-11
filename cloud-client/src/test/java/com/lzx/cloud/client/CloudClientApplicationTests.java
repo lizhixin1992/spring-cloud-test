@@ -3,6 +3,7 @@ package com.lzx.cloud.client;
 import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lzx.cloud.client.entity.User;
+import com.lzx.cloud.client.util.HttpUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -33,6 +34,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.UUID;
@@ -369,6 +371,53 @@ public class CloudClientApplicationTests {
         System.out.println(keys);
 //        Long delete = stringRedisTemplate.delete(keys);
 //        System.out.println(delete);
+    }
+
+    @Test
+    public void testException(){
+        try {
+            int a = 1 / 0;
+//            List<Integer> b = new ArrayList();
+//            int c = b.get(10);
+        }catch (Exception e){
+//            e.printStackTrace();
+            System.out.println(e.toString());
+            System.out.println(e.getClass());
+            System.out.println(e.getMessage());
+            System.out.println(e.getLocalizedMessage());
+        }
+    }
+
+    @Test
+    public void testEq(){
+        String a = "{\"trackId\":1,\"title\":\"太阳系外射线会影响“土卫六”大气成分\",\"brief\":\"日本东京大学饭野孝浩特任准教授领导的一个研究小组，利用ALMA望远镜对土星卫星“土卫六”的大气进行观测，检测出了微量气体释放的电波。\",\"subTitle\":null,\"vsetType\":null,\"showStyle\":\"0\",\"img1\":\"https://p4.img.cctvpic.com/photoworkspace/2020/02/17/2020021713470783989.jpg\",\"img2\":\"https://p4.img.cctvpic.com/photoworkspace/2020/02/17/2020021713470783989.jpg\",\"img3\":\"\",\"vtype\":\"31\",\"jumpUrl\":\"cntvcbox%3A%2F%2Fapp.cntv.cn%2FimageText%3FitemId%3DARTIv5qu9yIbMudW4Z4MGOjE200217%26title%3D%25E5%25A4%25AA%25E9%2598%25B3%25E7%25B3%25BB%25E5%25A4%2596%25E5%25B0%2584%25E7%25BA%25BF%25E4%25BC%259A%25E5%25BD%25B1%25E5%2593%258D%25E2%2580%259C%25E5%259C%259F%25E5%258D%25AB%25E5%2585%25AD%25E2%2580%259D%25E5%25A4%25A7%25E6%25B0%2594%25E6%2588%2590%25E5%2588%2586\",\"playid\":null,\"itemId\":\"ARTIv5qu9yIbMudW4Z4MGOjE200217\",\"itemUrl\":\"http://news.cctv.com/2020/02/17/ARTIv5qu9yIbMudW4Z4MGOjE200217.shtml\",\"mid\":\"ARTIv5qu9yIbMudW4Z4MGOjE200217\",\"adid\":null,\"videoLength\":null,\"cornerStr\":null,\"cornerStrRb\":null,\"cornerColour\":null,\"startTime\":0,\"endTime\":null,\"isVip\":0,\"hoverText\":null,\"source\":\"土卫六 大气成分\",\"imgRGB\":null,\"isTop\":0,\"recordNumber\":0,\"epgId\":null,\"epgName\":null,\"epgType\":null,\"epgChnlChar\":null,\"epgDarkDiamondPic\":null,\"epgDarkHorizontalPic\":null,\"epgHorizontalPic\":null,\"epgDiamondPic\":null,\"videoSetId\":null,\"homologous\":0,\"is_media_account\":null,\"media_account_id\":null,\"copyright\":null,\"copyrightStart\":null,\"copyrightPeriod\":null,\"skinColor\":null,\"isPublish\":1,\"isDraft\":0}";
+//        String b = "{\"trackId\":2,\"title\":\"太阳系外射线会影响“土卫六”大气成分\",\"brief\":\"日本东京大学饭野孝浩特任准教授领导的一个研究小组，利用ALMA望远镜对土星卫星“土卫六”的大气进行观测，检测出了微量气体释放的电波。\",\"subTitle\":null,\"vsetType\":null,\"showStyle\":\"0\",\"img1\":\"https://p4.img.cctvpic.com/photoworkspace/2020/02/17/2020021713470783989.jpg\",\"img2\":\"https://p4.img.cctvpic.com/photoworkspace/2020/02/17/2020021713470783989.jpg\",\"img3\":\"\",\"vtype\":\"31\",\"jumpUrl\":\"cntvcbox%3A%2F%2Fapp.cntv.cn%2FimageText%3FitemId%3DARTIv5qu9yIbMudW4Z4MGOjE200217%26title%3D%25E5%25A4%25AA%25E9%2598%25B3%25E7%25B3%25BB%25E5%25A4%2596%25E5%25B0%2584%25E7%25BA%25BF%25E4%25BC%259A%25E5%25BD%25B1%25E5%2593%258D%25E2%2580%259C%25E5%259C%259F%25E5%258D%25AB%25E5%2585%25AD%25E2%2580%259D%25E5%25A4%25A7%25E6%25B0%2594%25E6%2588%2590%25E5%2588%2586\",\"playid\":null,\"itemId\":\"ARTIv5qu9yIbMudW4Z4MGOjE200217\",\"itemUrl\":\"http://news.cctv.com/2020/02/17/ARTIv5qu9yIbMudW4Z4MGOjE200217.shtml\",\"mid\":\"ARTIv5qu9yIbMudW4Z4MGOjE200217\",\"adid\":null,\"videoLength\":null,\"cornerStr\":null,\"cornerStrRb\":null,\"cornerColour\":null,\"startTime\":0,\"endTime\":null,\"isVip\":0,\"hoverText\":null,\"source\":\"土卫六 大气成分\",\"imgRGB\":null,\"isTop\":0,\"recordNumber\":0,\"epgId\":null,\"epgName\":null,\"epgType\":null,\"epgChnlChar\":null,\"epgDarkDiamondPic\":null,\"epgDarkHorizontalPic\":null,\"epgHorizontalPic\":null,\"epgDiamondPic\":null,\"videoSetId\":null,\"homologous\":0,\"is_media_account\":null,\"media_account_id\":null,\"copyright\":null,\"copyrightStart\":null,\"copyrightPeriod\":null,\"skinColor\":null,\"isPublish\":1,\"isDraft\":0}";
+        System.out.println(a.equals(null));
+    }
+
+    @Test
+    public void testSplit(){
+        String a = "null#cboxoms";
+        String[] split = a.split("#");
+        Arrays.stream(split).forEach(System.out::println);
+        Integer s = Integer.valueOf(split[0]);
+        System.out.println(s);
+    }
+
+
+    @Test
+    public void testRandom(){
+        Random random = new Random();
+        for (int i = 0; i < 20; i++) {
+            System.out.println(random.nextInt(10));
+        }
+    }
+
+    @Test
+    public void testHttp(){
+        String url = "https://app.cctv.com/oms/api/promote/ouzhoubei";
+        String s = HttpUtils.sendGet(url, "");
+        System.out.println(s);
     }
 
 }
