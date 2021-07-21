@@ -1,9 +1,12 @@
 package com.lzx.cloud.client;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.parser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lzx.cloud.client.entity.User;
 import com.lzx.cloud.client.util.HttpUtils;
+import com.netflix.discovery.CommonConstants;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -21,6 +24,10 @@ import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -397,11 +404,15 @@ public class CloudClientApplicationTests {
 
     @Test
     public void testSplit(){
-        String a = "null#cboxoms";
-        String[] split = a.split("#");
-        Arrays.stream(split).forEach(System.out::println);
-        Integer s = Integer.valueOf(split[0]);
-        System.out.println(s);
+//        String a = "null#cboxoms";
+//        String[] split = a.split("#");
+//        Arrays.stream(split).forEach(System.out::println);
+//        Integer s = Integer.valueOf(split[0]);
+//        System.out.println(s);
+
+        String a = "http://10.52.29.45:8080/cboxoms/profile/jsonFile/dominatingScreen/2021/06/03/rhzm3_1921500882290794496.json";
+        System.out.println("/Users/lizhixin/uploadPath" + a.split("/profile")[1]);
+
     }
 
 
@@ -418,6 +429,21 @@ public class CloudClientApplicationTests {
         String url = "https://app.cctv.com/oms/api/promote/ouzhoubei";
         String s = HttpUtils.sendGet(url, "");
         System.out.println(s);
+    }
+
+    @Test
+    public void testFastJson() throws IOException {
+        System.out.println(JSON.toJSONString(1));
+
+        Map<String, String> data = new LinkedHashMap<>();
+        data.put("code", "12121");
+        System.out.println(JSON.toJSONString(data));
+
+        Map<String, Object> json = new LinkedHashMap<>();
+        File file = new File("/Users/lizhixin/uploadPath/cboxDominatingScreen/sportsEventsDominatingScreen.json");
+        FileInputStream fileInputStream = new FileInputStream(file);
+        json = JSON.parseObject(fileInputStream, Map.class, Feature.AutoCloseSource);
+        System.out.println(JSON.toJSONString(json));
     }
 
 }
