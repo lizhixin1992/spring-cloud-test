@@ -19,207 +19,104 @@ public final class PersonTestProtos {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <pre>
-     * int 类型
-     * </pre>
-     *
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
-    int getId();
-
-    /**
-     * <pre>
-     * string 类型
-     * </pre>
-     *
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     String getName();
     /**
-     * <pre>
-     * string 类型
-     * </pre>
-     *
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     com.google.protobuf.ByteString
         getNameBytes();
 
     /**
-     * <code>string email = 3;</code>
-     * @return The email.
+     * <code>int32 age = 2;</code>
+     * @return The age.
      */
-    String getEmail();
-    /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
-     */
-    com.google.protobuf.ByteString
-        getEmailBytes();
+    int getAge();
 
     /**
-     * <pre>
-     * 枚举类型
-     * </pre>
-     *
-     * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
-     * @return The enum numeric value on the wire for sex.
-     */
-    int getSexValue();
-    /**
-     * <pre>
-     * 枚举类型
-     * </pre>
-     *
-     * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
+     * <code>bool sex = 3;</code>
      * @return The sex.
      */
-    PersonTest.Sex getSex();
+    boolean getSex();
 
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>int64 birthday = 4;</code>
+     * @return The birthday.
      */
-    java.util.List<PersonTest.PhoneNumber>
-        getPhoneList();
+    long getBirthday();
+
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>string address = 5;</code>
+     * @return The address.
      */
-    PersonTest.PhoneNumber getPhone(int index);
+    String getAddress();
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>string address = 5;</code>
+     * @return The bytes for address.
      */
-    int getPhoneCount();
+    com.google.protobuf.ByteString
+        getAddressBytes();
+
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
      */
-    java.util.List<? extends PersonTest.PhoneNumberOrBuilder>
-        getPhoneOrBuilderList();
+    java.util.List<Car>
+        getCarsList();
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
      */
-    PersonTest.PhoneNumberOrBuilder getPhoneOrBuilder(
+    Car getCars(int index);
+    /**
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
+     */
+    int getCarsCount();
+    /**
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
+     */
+    java.util.List<? extends CarOrBuilder>
+        getCarsOrBuilderList();
+    /**
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
+     */
+    CarOrBuilder getCarsOrBuilder(
         int index);
 
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
-    int getTagsCount();
+    int getOtherCount();
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
-    boolean containsTags(
+    boolean containsOther(
         String key);
     /**
-     * Use {@link #getTagsMap()} instead.
+     * Use {@link #getOtherMap()} instead.
      */
     @Deprecated
     java.util.Map<String, String>
-    getTags();
+    getOther();
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
     java.util.Map<String, String>
-    getTagsMap();
+    getOtherMap();
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
 
-    String getTagsOrDefault(
+    String getOtherOrDefault(
         String key,
         String defaultValue);
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
 
-    String getTagsOrThrow(
+    String getOtherOrThrow(
         String key);
-
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    java.util.List<com.google.protobuf.Any> 
-        getDetailsList();
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    com.google.protobuf.Any getDetails(int index);
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    int getDetailsCount();
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-        getDetailsOrBuilderList();
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    com.google.protobuf.AnyOrBuilder getDetailsOrBuilder(
-        int index);
   }
   /**
    * Protobuf type {@code jet.protobuf.PersonTest}
@@ -235,10 +132,8 @@ public final class PersonTestProtos {
     }
     private PersonTest() {
       name_ = "";
-      email_ = "";
-      sex_ = 0;
-      phone_ = java.util.Collections.emptyList();
-      details_ = java.util.Collections.emptyList();
+      address_ = "";
+      cars_ = java.util.Collections.emptyList();
     }
 
     @Override
@@ -272,58 +167,53 @@ public final class PersonTestProtos {
             case 0:
               done = true;
               break;
-            case 8: {
-
-              id_ = input.readInt32();
-              break;
-            }
-            case 18: {
+            case 10: {
               String s = input.readStringRequireUtf8();
 
               name_ = s;
               break;
             }
-            case 26: {
-              String s = input.readStringRequireUtf8();
+            case 16: {
 
-              email_ = s;
+              age_ = input.readInt32();
+              break;
+            }
+            case 24: {
+
+              sex_ = input.readBool();
               break;
             }
             case 32: {
-              int rawValue = input.readEnum();
 
-              sex_ = rawValue;
+              birthday_ = input.readInt64();
               break;
             }
             case 42: {
-              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
-                phone_ = new java.util.ArrayList<PhoneNumber>();
-                mutable_bitField0_ |= 0x00000001;
-              }
-              phone_.add(
-                  input.readMessage(PhoneNumber.parser(), extensionRegistry));
+              String s = input.readStringRequireUtf8();
+
+              address_ = s;
               break;
             }
             case 50: {
-              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
-                tags_ = com.google.protobuf.MapField.newMapField(
-                    TagsDefaultEntryHolder.defaultEntry);
-                mutable_bitField0_ |= 0x00000002;
+              if (!((mutable_bitField0_ & 0x00000001) != 0)) {
+                cars_ = new java.util.ArrayList<Car>();
+                mutable_bitField0_ |= 0x00000001;
               }
-              com.google.protobuf.MapEntry<String, String>
-              tags__ = input.readMessage(
-                  TagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-              tags_.getMutableMap().put(
-                  tags__.getKey(), tags__.getValue());
+              cars_.add(
+                  input.readMessage(Car.parser(), extensionRegistry));
               break;
             }
             case 58: {
-              if (!((mutable_bitField0_ & 0x00000004) != 0)) {
-                details_ = new java.util.ArrayList<com.google.protobuf.Any>();
-                mutable_bitField0_ |= 0x00000004;
+              if (!((mutable_bitField0_ & 0x00000002) != 0)) {
+                other_ = com.google.protobuf.MapField.newMapField(
+                    OtherDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
               }
-              details_.add(
-                  input.readMessage(com.google.protobuf.Any.parser(), extensionRegistry));
+              com.google.protobuf.MapEntry<String, String>
+              other__ = input.readMessage(
+                  OtherDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              other_.getMutableMap().put(
+                  other__.getKey(), other__.getValue());
               break;
             }
             default: {
@@ -342,10 +232,7 @@ public final class PersonTestProtos {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000001) != 0)) {
-          phone_ = java.util.Collections.unmodifiableList(phone_);
-        }
-        if (((mutable_bitField0_ & 0x00000004) != 0)) {
-          details_ = java.util.Collections.unmodifiableList(details_);
+          cars_ = java.util.Collections.unmodifiableList(cars_);
         }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
@@ -361,8 +248,8 @@ public final class PersonTestProtos {
     protected com.google.protobuf.MapField internalGetMapField(
         int number) {
       switch (number) {
-        case 6:
-          return internalGetTags();
+        case 7:
+          return internalGetOther();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -376,950 +263,10 @@ public final class PersonTestProtos {
               PersonTest.class, Builder.class);
     }
 
-    /**
-     * <pre>
-     * 定义一个枚举
-     * </pre>
-     *
-     * Protobuf enum {@code jet.protobuf.PersonTest.Sex}
-     */
-    public enum Sex
-        implements com.google.protobuf.ProtocolMessageEnum {
-      /**
-       * <code>DEFAULT = 0;</code>
-       */
-      DEFAULT(0),
-      /**
-       * <code>MALE = 1;</code>
-       */
-      MALE(1),
-      /**
-       * <code>Female = 2;</code>
-       */
-      Female(2),
-      UNRECOGNIZED(-1),
-      ;
-
-      /**
-       * <code>DEFAULT = 0;</code>
-       */
-      public static final int DEFAULT_VALUE = 0;
-      /**
-       * <code>MALE = 1;</code>
-       */
-      public static final int MALE_VALUE = 1;
-      /**
-       * <code>Female = 2;</code>
-       */
-      public static final int Female_VALUE = 2;
-
-
-      public final int getNumber() {
-        if (this == UNRECOGNIZED) {
-          throw new IllegalArgumentException(
-              "Can't get the number of an unknown enum value.");
-        }
-        return value;
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @Deprecated
-      public static Sex valueOf(int value) {
-        return forNumber(value);
-      }
-
-      /**
-       * @param value The numeric wire value of the corresponding enum entry.
-       * @return The enum associated with the given numeric wire value.
-       */
-      public static Sex forNumber(int value) {
-        switch (value) {
-          case 0: return DEFAULT;
-          case 1: return MALE;
-          case 2: return Female;
-          default: return null;
-        }
-      }
-
-      public static com.google.protobuf.Internal.EnumLiteMap<Sex>
-          internalGetValueMap() {
-        return internalValueMap;
-      }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          Sex> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<Sex>() {
-              public Sex findValueByNumber(int number) {
-                return Sex.forNumber(number);
-              }
-            };
-
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
-        if (this == UNRECOGNIZED) {
-          throw new IllegalStateException(
-              "Can't get the descriptor of an unrecognized enum value.");
-        }
-        return getDescriptor().getValues().get(ordinal());
-      }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
-        return getDescriptor();
-      }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return PersonTest.getDescriptor().getEnumTypes().get(0);
-      }
-
-      private static final Sex[] VALUES = values();
-
-      public static Sex valueOf(
-          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-        if (desc.getType() != getDescriptor()) {
-          throw new IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
-        }
-        if (desc.getIndex() == -1) {
-          return UNRECOGNIZED;
-        }
-        return VALUES[desc.getIndex()];
-      }
-
-      private final int value;
-
-      private Sex(int value) {
-        this.value = value;
-      }
-
-      // @@protoc_insertion_point(enum_scope:jet.protobuf.PersonTest.Sex)
-    }
-
-    public interface PhoneNumberOrBuilder extends
-        // @@protoc_insertion_point(interface_extends:jet.protobuf.PersonTest.PhoneNumber)
-        com.google.protobuf.MessageOrBuilder {
-
-      /**
-       * <code>string number = 1;</code>
-       * @return The number.
-       */
-      String getNumber();
-      /**
-       * <code>string number = 1;</code>
-       * @return The bytes for number.
-       */
-      com.google.protobuf.ByteString
-          getNumberBytes();
-
-      /**
-       * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      int getTypeValue();
-      /**
-       * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-       * @return The type.
-       */
-      PhoneNumber.PhoneType getType();
-    }
-    /**
-     * <pre>
-     * 定义一个 message
-     * </pre>
-     *
-     * Protobuf type {@code jet.protobuf.PersonTest.PhoneNumber}
-     */
-    public static final class PhoneNumber extends
-        com.google.protobuf.GeneratedMessageV3 implements
-        // @@protoc_insertion_point(message_implements:jet.protobuf.PersonTest.PhoneNumber)
-        PhoneNumberOrBuilder {
-    private static final long serialVersionUID = 0L;
-      // Use PhoneNumber.newBuilder() to construct.
-      private PhoneNumber(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-        super(builder);
-      }
-      private PhoneNumber() {
-        number_ = "";
-        type_ = 0;
-      }
-
-      @Override
-      @SuppressWarnings({"unused"})
-      protected Object newInstance(
-          UnusedPrivateParameter unused) {
-        return new PhoneNumber();
-      }
-
-      @Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
-        return this.unknownFields;
-      }
-      private PhoneNumber(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        this();
-        if (extensionRegistry == null) {
-          throw new NullPointerException();
-        }
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                String s = input.readStringRequireUtf8();
-
-                number_ = s;
-                break;
-              }
-              case 16: {
-                int rawValue = input.readEnum();
-
-                type_ = rawValue;
-                break;
-              }
-              default: {
-                if (!parseUnknownField(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
-                }
-                break;
-              }
-            }
-          }
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(this);
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
-        } finally {
-          this.unknownFields = unknownFields.build();
-          makeExtensionsImmutable();
-        }
-      }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return PersonTestProtos.internal_static_jet_protobuf_PersonTest_PhoneNumber_descriptor;
-      }
-
-      @Override
-      protected FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return PersonTestProtos.internal_static_jet_protobuf_PersonTest_PhoneNumber_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                PhoneNumber.class, Builder.class);
-      }
-
-      /**
-       * Protobuf enum {@code jet.protobuf.PersonTest.PhoneNumber.PhoneType}
-       */
-      public enum PhoneType
-          implements com.google.protobuf.ProtocolMessageEnum {
-        /**
-         * <code>MOBILE = 0;</code>
-         */
-        MOBILE(0),
-        /**
-         * <code>HOME = 1;</code>
-         */
-        HOME(1),
-        /**
-         * <code>WORK = 2;</code>
-         */
-        WORK(2),
-        UNRECOGNIZED(-1),
-        ;
-
-        /**
-         * <code>MOBILE = 0;</code>
-         */
-        public static final int MOBILE_VALUE = 0;
-        /**
-         * <code>HOME = 1;</code>
-         */
-        public static final int HOME_VALUE = 1;
-        /**
-         * <code>WORK = 2;</code>
-         */
-        public static final int WORK_VALUE = 2;
-
-
-        public final int getNumber() {
-          if (this == UNRECOGNIZED) {
-            throw new IllegalArgumentException(
-                "Can't get the number of an unknown enum value.");
-          }
-          return value;
-        }
-
-        /**
-         * @param value The numeric wire value of the corresponding enum entry.
-         * @return The enum associated with the given numeric wire value.
-         * @deprecated Use {@link #forNumber(int)} instead.
-         */
-        @Deprecated
-        public static PhoneType valueOf(int value) {
-          return forNumber(value);
-        }
-
-        /**
-         * @param value The numeric wire value of the corresponding enum entry.
-         * @return The enum associated with the given numeric wire value.
-         */
-        public static PhoneType forNumber(int value) {
-          switch (value) {
-            case 0: return MOBILE;
-            case 1: return HOME;
-            case 2: return WORK;
-            default: return null;
-          }
-        }
-
-        public static com.google.protobuf.Internal.EnumLiteMap<PhoneType>
-            internalGetValueMap() {
-          return internalValueMap;
-        }
-        private static final com.google.protobuf.Internal.EnumLiteMap<
-            PhoneType> internalValueMap =
-              new com.google.protobuf.Internal.EnumLiteMap<PhoneType>() {
-                public PhoneType findValueByNumber(int number) {
-                  return PhoneType.forNumber(number);
-                }
-              };
-
-        public final com.google.protobuf.Descriptors.EnumValueDescriptor
-            getValueDescriptor() {
-          if (this == UNRECOGNIZED) {
-            throw new IllegalStateException(
-                "Can't get the descriptor of an unrecognized enum value.");
-          }
-          return getDescriptor().getValues().get(ordinal());
-        }
-        public final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptorForType() {
-          return getDescriptor();
-        }
-        public static final com.google.protobuf.Descriptors.EnumDescriptor
-            getDescriptor() {
-          return PhoneNumber.getDescriptor().getEnumTypes().get(0);
-        }
-
-        private static final PhoneType[] VALUES = values();
-
-        public static PhoneType valueOf(
-            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
-          if (desc.getType() != getDescriptor()) {
-            throw new IllegalArgumentException(
-              "EnumValueDescriptor is not for this type.");
-          }
-          if (desc.getIndex() == -1) {
-            return UNRECOGNIZED;
-          }
-          return VALUES[desc.getIndex()];
-        }
-
-        private final int value;
-
-        private PhoneType(int value) {
-          this.value = value;
-        }
-
-        // @@protoc_insertion_point(enum_scope:jet.protobuf.PersonTest.PhoneNumber.PhoneType)
-      }
-
-      public static final int NUMBER_FIELD_NUMBER = 1;
-      private volatile Object number_;
-      /**
-       * <code>string number = 1;</code>
-       * @return The number.
-       */
-      @Override
-      public String getNumber() {
-        Object ref = number_;
-        if (ref instanceof String) {
-          return (String) ref;
-        } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
-          number_ = s;
-          return s;
-        }
-      }
-      /**
-       * <code>string number = 1;</code>
-       * @return The bytes for number.
-       */
-      @Override
-      public com.google.protobuf.ByteString
-          getNumberBytes() {
-        Object ref = number_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
-          number_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-
-      public static final int TYPE_FIELD_NUMBER = 2;
-      private int type_;
-      /**
-       * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-       * @return The enum numeric value on the wire for type.
-       */
-      @Override public int getTypeValue() {
-        return type_;
-      }
-      /**
-       * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-       * @return The type.
-       */
-      @Override public PhoneType getType() {
-        @SuppressWarnings("deprecation")
-        PhoneType result = PhoneType.valueOf(type_);
-        return result == null ? PhoneType.UNRECOGNIZED : result;
-      }
-
-      private byte memoizedIsInitialized = -1;
-      @Override
-      public final boolean isInitialized() {
-        byte isInitialized = memoizedIsInitialized;
-        if (isInitialized == 1) return true;
-        if (isInitialized == 0) return false;
-
-        memoizedIsInitialized = 1;
-        return true;
-      }
-
-      @Override
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
-        if (!getNumberBytes().isEmpty()) {
-          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, number_);
-        }
-        if (type_ != PhoneType.MOBILE.getNumber()) {
-          output.writeEnum(2, type_);
-        }
-        unknownFields.writeTo(output);
-      }
-
-      @Override
-      public int getSerializedSize() {
-        int size = memoizedSize;
-        if (size != -1) return size;
-
-        size = 0;
-        if (!getNumberBytes().isEmpty()) {
-          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, number_);
-        }
-        if (type_ != PhoneType.MOBILE.getNumber()) {
-          size += com.google.protobuf.CodedOutputStream
-            .computeEnumSize(2, type_);
-        }
-        size += unknownFields.getSerializedSize();
-        memoizedSize = size;
-        return size;
-      }
-
-      @Override
-      public boolean equals(final Object obj) {
-        if (obj == this) {
-         return true;
-        }
-        if (!(obj instanceof PhoneNumber)) {
-          return super.equals(obj);
-        }
-        PhoneNumber other = (PhoneNumber) obj;
-
-        if (!getNumber()
-            .equals(other.getNumber())) return false;
-        if (type_ != other.type_) return false;
-        if (!unknownFields.equals(other.unknownFields)) return false;
-        return true;
-      }
-
-      @Override
-      public int hashCode() {
-        if (memoizedHashCode != 0) {
-          return memoizedHashCode;
-        }
-        int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
-        hash = (37 * hash) + NUMBER_FIELD_NUMBER;
-        hash = (53 * hash) + getNumber().hashCode();
-        hash = (37 * hash) + TYPE_FIELD_NUMBER;
-        hash = (53 * hash) + type_;
-        hash = (29 * hash) + unknownFields.hashCode();
-        memoizedHashCode = hash;
-        return hash;
-      }
-
-      public static PhoneNumber parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static PhoneNumber parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static PhoneNumber parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static PhoneNumber parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static PhoneNumber parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static PhoneNumber parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static PhoneNumber parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static PhoneNumber parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static PhoneNumber parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static PhoneNumber parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static PhoneNumber parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static PhoneNumber parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-
-      @Override
-      public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder() {
-        return DEFAULT_INSTANCE.toBuilder();
-      }
-      public static Builder newBuilder(PhoneNumber prototype) {
-        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-      }
-      @Override
-      public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
-      }
-
-      @Override
-      protected Builder newBuilderForType(
-          BuilderParent parent) {
-        Builder builder = new Builder(parent);
-        return builder;
-      }
-      /**
-       * <pre>
-       * 定义一个 message
-       * </pre>
-       *
-       * Protobuf type {@code jet.protobuf.PersonTest.PhoneNumber}
-       */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-          // @@protoc_insertion_point(builder_implements:jet.protobuf.PersonTest.PhoneNumber)
-          PhoneNumberOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return PersonTestProtos.internal_static_jet_protobuf_PersonTest_PhoneNumber_descriptor;
-        }
-
-        @Override
-        protected FieldAccessorTable
-            internalGetFieldAccessorTable() {
-          return PersonTestProtos.internal_static_jet_protobuf_PersonTest_PhoneNumber_fieldAccessorTable
-              .ensureFieldAccessorsInitialized(
-                  PhoneNumber.class, Builder.class);
-        }
-
-        // Construct using com.jet.protobuf.PersonTestProtos.PersonTest.PhoneNumber.newBuilder()
-        private Builder() {
-          maybeForceBuilderInitialization();
-        }
-
-        private Builder(
-            BuilderParent parent) {
-          super(parent);
-          maybeForceBuilderInitialization();
-        }
-        private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
-        }
-        @Override
-        public Builder clear() {
-          super.clear();
-          number_ = "";
-
-          type_ = 0;
-
-          return this;
-        }
-
-        @Override
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return PersonTestProtos.internal_static_jet_protobuf_PersonTest_PhoneNumber_descriptor;
-        }
-
-        @Override
-        public PhoneNumber getDefaultInstanceForType() {
-          return PhoneNumber.getDefaultInstance();
-        }
-
-        @Override
-        public PhoneNumber build() {
-          PhoneNumber result = buildPartial();
-          if (!result.isInitialized()) {
-            throw newUninitializedMessageException(result);
-          }
-          return result;
-        }
-
-        @Override
-        public PhoneNumber buildPartial() {
-          PhoneNumber result = new PhoneNumber(this);
-          result.number_ = number_;
-          result.type_ = type_;
-          onBuilt();
-          return result;
-        }
-
-        @Override
-        public Builder clone() {
-          return super.clone();
-        }
-        @Override
-        public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return super.setField(field, value);
-        }
-        @Override
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
-          return super.clearField(field);
-        }
-        @Override
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-          return super.clearOneof(oneof);
-        }
-        @Override
-        public Builder setRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, Object value) {
-          return super.setRepeatedField(field, index, value);
-        }
-        @Override
-        public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            Object value) {
-          return super.addRepeatedField(field, value);
-        }
-        @Override
-        public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof PhoneNumber) {
-            return mergeFrom((PhoneNumber)other);
-          } else {
-            super.mergeFrom(other);
-            return this;
-          }
-        }
-
-        public Builder mergeFrom(PhoneNumber other) {
-          if (other == PhoneNumber.getDefaultInstance()) return this;
-          if (!other.getNumber().isEmpty()) {
-            number_ = other.number_;
-            onChanged();
-          }
-          if (other.type_ != 0) {
-            setTypeValue(other.getTypeValue());
-          }
-          this.mergeUnknownFields(other.unknownFields);
-          onChanged();
-          return this;
-        }
-
-        @Override
-        public final boolean isInitialized() {
-          return true;
-        }
-
-        @Override
-        public Builder mergeFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-          PhoneNumber parsedMessage = null;
-          try {
-            parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
-          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (PhoneNumber) e.getUnfinishedMessage();
-            throw e.unwrapIOException();
-          } finally {
-            if (parsedMessage != null) {
-              mergeFrom(parsedMessage);
-            }
-          }
-          return this;
-        }
-
-        private Object number_ = "";
-        /**
-         * <code>string number = 1;</code>
-         * @return The number.
-         */
-        public String getNumber() {
-          Object ref = number_;
-          if (!(ref instanceof String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
-            String s = bs.toStringUtf8();
-            number_ = s;
-            return s;
-          } else {
-            return (String) ref;
-          }
-        }
-        /**
-         * <code>string number = 1;</code>
-         * @return The bytes for number.
-         */
-        public com.google.protobuf.ByteString
-            getNumberBytes() {
-          Object ref = number_;
-          if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (String) ref);
-            number_ = b;
-            return b;
-          } else {
-            return (com.google.protobuf.ByteString) ref;
-          }
-        }
-        /**
-         * <code>string number = 1;</code>
-         * @param value The number to set.
-         * @return This builder for chaining.
-         */
-        public Builder setNumber(
-            String value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  
-          number_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string number = 1;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearNumber() {
-          
-          number_ = getDefaultInstance().getNumber();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>string number = 1;</code>
-         * @param value The bytes for number to set.
-         * @return This builder for chaining.
-         */
-        public Builder setNumberBytes(
-            com.google.protobuf.ByteString value) {
-          if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
-          number_ = value;
-          onChanged();
-          return this;
-        }
-
-        private int type_ = 0;
-        /**
-         * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-         * @return The enum numeric value on the wire for type.
-         */
-        @Override public int getTypeValue() {
-          return type_;
-        }
-        /**
-         * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-         * @param value The enum numeric value on the wire for type to set.
-         * @return This builder for chaining.
-         */
-        public Builder setTypeValue(int value) {
-          
-          type_ = value;
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-         * @return The type.
-         */
-        @Override
-        public PhoneType getType() {
-          @SuppressWarnings("deprecation")
-          PhoneType result = PhoneType.valueOf(type_);
-          return result == null ? PhoneType.UNRECOGNIZED : result;
-        }
-        /**
-         * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-         * @param value The type to set.
-         * @return This builder for chaining.
-         */
-        public Builder setType(PhoneType value) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          
-          type_ = value.getNumber();
-          onChanged();
-          return this;
-        }
-        /**
-         * <code>.jet.protobuf.PersonTest.PhoneNumber.PhoneType type = 2;</code>
-         * @return This builder for chaining.
-         */
-        public Builder clearType() {
-          
-          type_ = 0;
-          onChanged();
-          return this;
-        }
-        @Override
-        public final Builder setUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFields(unknownFields);
-        }
-
-        @Override
-        public final Builder mergeUnknownFields(
-            final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
-        }
-
-
-        // @@protoc_insertion_point(builder_scope:jet.protobuf.PersonTest.PhoneNumber)
-      }
-
-      // @@protoc_insertion_point(class_scope:jet.protobuf.PersonTest.PhoneNumber)
-      private static final PhoneNumber DEFAULT_INSTANCE;
-      static {
-        DEFAULT_INSTANCE = new PhoneNumber();
-      }
-
-      public static PhoneNumber getDefaultInstance() {
-        return DEFAULT_INSTANCE;
-      }
-
-      private static final com.google.protobuf.Parser<PhoneNumber>
-          PARSER = new com.google.protobuf.AbstractParser<PhoneNumber>() {
-        @Override
-        public PhoneNumber parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PhoneNumber(input, extensionRegistry);
-        }
-      };
-
-      public static com.google.protobuf.Parser<PhoneNumber> parser() {
-        return PARSER;
-      }
-
-      @Override
-      public com.google.protobuf.Parser<PhoneNumber> getParserForType() {
-        return PARSER;
-      }
-
-      @Override
-      public PhoneNumber getDefaultInstanceForType() {
-        return DEFAULT_INSTANCE;
-      }
-
-    }
-
-    public static final int ID_FIELD_NUMBER = 1;
-    private int id_;
-    /**
-     * <pre>
-     * int 类型
-     * </pre>
-     *
-     * <code>int32 id = 1;</code>
-     * @return The id.
-     */
-    @Override
-    public int getId() {
-      return id_;
-    }
-
-    public static final int NAME_FIELD_NUMBER = 2;
+    public static final int NAME_FIELD_NUMBER = 1;
     private volatile Object name_;
     /**
-     * <pre>
-     * string 类型
-     * </pre>
-     *
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      * @return The name.
      */
     @Override
@@ -1328,7 +275,7 @@ public final class PersonTestProtos {
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
         name_ = s;
@@ -1336,11 +283,7 @@ public final class PersonTestProtos {
       }
     }
     /**
-     * <pre>
-     * string 类型
-     * </pre>
-     *
-     * <code>string name = 2;</code>
+     * <code>string name = 1;</code>
      * @return The bytes for name.
      */
     @Override
@@ -1348,7 +291,7 @@ public final class PersonTestProtos {
         getNameBytes() {
       Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
         name_ = b;
@@ -1358,286 +301,196 @@ public final class PersonTestProtos {
       }
     }
 
-    public static final int EMAIL_FIELD_NUMBER = 3;
-    private volatile Object email_;
+    public static final int AGE_FIELD_NUMBER = 2;
+    private int age_;
     /**
-     * <code>string email = 3;</code>
-     * @return The email.
+     * <code>int32 age = 2;</code>
+     * @return The age.
      */
     @Override
-    public String getEmail() {
-      Object ref = email_;
+    public int getAge() {
+      return age_;
+    }
+
+    public static final int SEX_FIELD_NUMBER = 3;
+    private boolean sex_;
+    /**
+     * <code>bool sex = 3;</code>
+     * @return The sex.
+     */
+    @Override
+    public boolean getSex() {
+      return sex_;
+    }
+
+    public static final int BIRTHDAY_FIELD_NUMBER = 4;
+    private long birthday_;
+    /**
+     * <code>int64 birthday = 4;</code>
+     * @return The birthday.
+     */
+    @Override
+    public long getBirthday() {
+      return birthday_;
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 5;
+    private volatile Object address_;
+    /**
+     * <code>string address = 5;</code>
+     * @return The address.
+     */
+    @Override
+    public String getAddress() {
+      Object ref = address_;
       if (ref instanceof String) {
         return (String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
+        com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         String s = bs.toStringUtf8();
-        email_ = s;
+        address_ = s;
         return s;
       }
     }
     /**
-     * <code>string email = 3;</code>
-     * @return The bytes for email.
+     * <code>string address = 5;</code>
+     * @return The bytes for address.
      */
     @Override
     public com.google.protobuf.ByteString
-        getEmailBytes() {
-      Object ref = email_;
+        getAddressBytes() {
+      Object ref = address_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
+        com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8(
                 (String) ref);
-        email_ = b;
+        address_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int SEX_FIELD_NUMBER = 4;
-    private int sex_;
+    public static final int CARS_FIELD_NUMBER = 6;
+    private java.util.List<Car> cars_;
     /**
-     * <pre>
-     * 枚举类型
-     * </pre>
-     *
-     * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
-     * @return The enum numeric value on the wire for sex.
-     */
-    @Override public int getSexValue() {
-      return sex_;
-    }
-    /**
-     * <pre>
-     * 枚举类型
-     * </pre>
-     *
-     * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
-     * @return The sex.
-     */
-    @Override public Sex getSex() {
-      @SuppressWarnings("deprecation")
-      Sex result = Sex.valueOf(sex_);
-      return result == null ? Sex.UNRECOGNIZED : result;
-    }
-
-    public static final int PHONE_FIELD_NUMBER = 5;
-    private java.util.List<PhoneNumber> phone_;
-    /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
      */
     @Override
-    public java.util.List<PhoneNumber> getPhoneList() {
-      return phone_;
+    public java.util.List<Car> getCarsList() {
+      return cars_;
     }
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
      */
     @Override
-    public java.util.List<? extends PhoneNumberOrBuilder>
-        getPhoneOrBuilderList() {
-      return phone_;
+    public java.util.List<? extends CarOrBuilder>
+        getCarsOrBuilderList() {
+      return cars_;
     }
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
      */
     @Override
-    public int getPhoneCount() {
-      return phone_.size();
+    public int getCarsCount() {
+      return cars_.size();
     }
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
      */
     @Override
-    public PhoneNumber getPhone(int index) {
-      return phone_.get(index);
+    public Car getCars(int index) {
+      return cars_.get(index);
     }
     /**
-     * <pre>
-     * 引用下面定义的 PhoneNumber 类型的 message
-     * </pre>
-     *
-     * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+     * <code>repeated .jet.protobuf.Car cars = 6;</code>
      */
     @Override
-    public PhoneNumberOrBuilder getPhoneOrBuilder(
+    public CarOrBuilder getCarsOrBuilder(
         int index) {
-      return phone_.get(index);
+      return cars_.get(index);
     }
 
-    public static final int TAGS_FIELD_NUMBER = 6;
-    private static final class TagsDefaultEntryHolder {
+    public static final int OTHER_FIELD_NUMBER = 7;
+    private static final class OtherDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           String, String> defaultEntry =
               com.google.protobuf.MapEntry
               .<String, String>newDefaultInstance(
-                  PersonTestProtos.internal_static_jet_protobuf_PersonTest_TagsEntry_descriptor,
+                  PersonTestProtos.internal_static_jet_protobuf_PersonTest_OtherEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "");
     }
     private com.google.protobuf.MapField<
-        String, String> tags_;
+        String, String> other_;
     private com.google.protobuf.MapField<String, String>
-    internalGetTags() {
-      if (tags_ == null) {
+    internalGetOther() {
+      if (other_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
-            TagsDefaultEntryHolder.defaultEntry);
+            OtherDefaultEntryHolder.defaultEntry);
       }
-      return tags_;
+      return other_;
     }
 
-    public int getTagsCount() {
-      return internalGetTags().getMap().size();
+    public int getOtherCount() {
+      return internalGetOther().getMap().size();
     }
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
 
     @Override
-    public boolean containsTags(
+    public boolean containsOther(
         String key) {
       if (key == null) { throw new NullPointerException(); }
-      return internalGetTags().getMap().containsKey(key);
+      return internalGetOther().getMap().containsKey(key);
     }
     /**
-     * Use {@link #getTagsMap()} instead.
+     * Use {@link #getOtherMap()} instead.
      */
     @Override
     @Deprecated
-    public java.util.Map<String, String> getTags() {
-      return getTagsMap();
+    public java.util.Map<String, String> getOther() {
+      return getOtherMap();
     }
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
     @Override
 
-    public java.util.Map<String, String> getTagsMap() {
-      return internalGetTags().getMap();
+    public java.util.Map<String, String> getOtherMap() {
+      return internalGetOther().getMap();
     }
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
     @Override
 
-    public String getTagsOrDefault(
+    public String getOtherOrDefault(
         String key,
         String defaultValue) {
       if (key == null) { throw new NullPointerException(); }
       java.util.Map<String, String> map =
-          internalGetTags().getMap();
+          internalGetOther().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <pre>
-     * map 类型
-     * </pre>
-     *
-     * <code>map&lt;string, string&gt; tags = 6;</code>
+     * <code>map&lt;string, string&gt; other = 7;</code>
      */
     @Override
 
-    public String getTagsOrThrow(
+    public String getOtherOrThrow(
         String key) {
       if (key == null) { throw new NullPointerException(); }
       java.util.Map<String, String> map =
-          internalGetTags().getMap();
+          internalGetOther().getMap();
       if (!map.containsKey(key)) {
         throw new IllegalArgumentException();
       }
       return map.get(key);
-    }
-
-    public static final int DETAILS_FIELD_NUMBER = 7;
-    private java.util.List<com.google.protobuf.Any> details_;
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    @Override
-    public java.util.List<com.google.protobuf.Any> getDetailsList() {
-      return details_;
-    }
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    @Override
-    public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-        getDetailsOrBuilderList() {
-      return details_;
-    }
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    @Override
-    public int getDetailsCount() {
-      return details_.size();
-    }
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    @Override
-    public com.google.protobuf.Any getDetails(int index) {
-      return details_.get(index);
-    }
-    /**
-     * <pre>
-     * 使用 google 的 any 类型
-     * </pre>
-     *
-     * <code>repeated .google.protobuf.Any details = 7;</code>
-     */
-    @Override
-    public com.google.protobuf.AnyOrBuilder getDetailsOrBuilder(
-        int index) {
-      return details_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1654,30 +507,30 @@ public final class PersonTestProtos {
     @Override
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (id_ != 0) {
-        output.writeInt32(1, id_);
-      }
       if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
       }
-      if (!getEmailBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, email_);
+      if (age_ != 0) {
+        output.writeInt32(2, age_);
       }
-      if (sex_ != Sex.DEFAULT.getNumber()) {
-        output.writeEnum(4, sex_);
+      if (sex_ != false) {
+        output.writeBool(3, sex_);
       }
-      for (int i = 0; i < phone_.size(); i++) {
-        output.writeMessage(5, phone_.get(i));
+      if (birthday_ != 0L) {
+        output.writeInt64(4, birthday_);
+      }
+      if (!getAddressBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, address_);
+      }
+      for (int i = 0; i < cars_.size(); i++) {
+        output.writeMessage(6, cars_.get(i));
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
-          internalGetTags(),
-          TagsDefaultEntryHolder.defaultEntry,
-          6);
-      for (int i = 0; i < details_.size(); i++) {
-        output.writeMessage(7, details_.get(i));
-      }
+          internalGetOther(),
+          OtherDefaultEntryHolder.defaultEntry,
+          7);
       unknownFields.writeTo(output);
     }
 
@@ -1687,37 +540,37 @@ public final class PersonTestProtos {
       if (size != -1) return size;
 
       size = 0;
-      if (id_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(1, id_);
-      }
       if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
       }
-      if (!getEmailBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, email_);
-      }
-      if (sex_ != Sex.DEFAULT.getNumber()) {
+      if (age_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, sex_);
+          .computeInt32Size(2, age_);
       }
-      for (int i = 0; i < phone_.size(); i++) {
+      if (sex_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, phone_.get(i));
+          .computeBoolSize(3, sex_);
+      }
+      if (birthday_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(4, birthday_);
+      }
+      if (!getAddressBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, address_);
+      }
+      for (int i = 0; i < cars_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, cars_.get(i));
       }
       for (java.util.Map.Entry<String, String> entry
-           : internalGetTags().getMap().entrySet()) {
+           : internalGetOther().getMap().entrySet()) {
         com.google.protobuf.MapEntry<String, String>
-        tags__ = TagsDefaultEntryHolder.defaultEntry.newBuilderForType()
+        other__ = OtherDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(6, tags__);
-      }
-      for (int i = 0; i < details_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, details_.get(i));
+            .computeMessageSize(7, other__);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1734,19 +587,20 @@ public final class PersonTestProtos {
       }
       PersonTest other = (PersonTest) obj;
 
-      if (getId()
-          != other.getId()) return false;
       if (!getName()
           .equals(other.getName())) return false;
-      if (!getEmail()
-          .equals(other.getEmail())) return false;
-      if (sex_ != other.sex_) return false;
-      if (!getPhoneList()
-          .equals(other.getPhoneList())) return false;
-      if (!internalGetTags().equals(
-          other.internalGetTags())) return false;
-      if (!getDetailsList()
-          .equals(other.getDetailsList())) return false;
+      if (getAge()
+          != other.getAge()) return false;
+      if (getSex()
+          != other.getSex()) return false;
+      if (getBirthday()
+          != other.getBirthday()) return false;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getCarsList()
+          .equals(other.getCarsList())) return false;
+      if (!internalGetOther().equals(
+          other.internalGetOther())) return false;
       if (!unknownFields.equals(other.unknownFields)) return false;
       return true;
     }
@@ -1758,25 +612,25 @@ public final class PersonTestProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + ID_FIELD_NUMBER;
-      hash = (53 * hash) + getId();
       hash = (37 * hash) + NAME_FIELD_NUMBER;
       hash = (53 * hash) + getName().hashCode();
-      hash = (37 * hash) + EMAIL_FIELD_NUMBER;
-      hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + AGE_FIELD_NUMBER;
+      hash = (53 * hash) + getAge();
       hash = (37 * hash) + SEX_FIELD_NUMBER;
-      hash = (53 * hash) + sex_;
-      if (getPhoneCount() > 0) {
-        hash = (37 * hash) + PHONE_FIELD_NUMBER;
-        hash = (53 * hash) + getPhoneList().hashCode();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getSex());
+      hash = (37 * hash) + BIRTHDAY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBirthday());
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      if (getCarsCount() > 0) {
+        hash = (37 * hash) + CARS_FIELD_NUMBER;
+        hash = (53 * hash) + getCarsList().hashCode();
       }
-      if (!internalGetTags().getMap().isEmpty()) {
-        hash = (37 * hash) + TAGS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetTags().hashCode();
-      }
-      if (getDetailsCount() > 0) {
-        hash = (37 * hash) + DETAILS_FIELD_NUMBER;
-        hash = (53 * hash) + getDetailsList().hashCode();
+      if (!internalGetOther().getMap().isEmpty()) {
+        hash = (37 * hash) + OTHER_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetOther().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -1889,8 +743,8 @@ public final class PersonTestProtos {
       protected com.google.protobuf.MapField internalGetMapField(
           int number) {
         switch (number) {
-          case 6:
-            return internalGetTags();
+          case 7:
+            return internalGetOther();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1900,8 +754,8 @@ public final class PersonTestProtos {
       protected com.google.protobuf.MapField internalGetMutableMapField(
           int number) {
         switch (number) {
-          case 6:
-            return internalGetMutableTags();
+          case 7:
+            return internalGetMutableOther();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1928,34 +782,29 @@ public final class PersonTestProtos {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getPhoneFieldBuilder();
-          getDetailsFieldBuilder();
+          getCarsFieldBuilder();
         }
       }
       @Override
       public Builder clear() {
         super.clear();
-        id_ = 0;
-
         name_ = "";
 
-        email_ = "";
+        age_ = 0;
 
-        sex_ = 0;
+        sex_ = false;
 
-        if (phoneBuilder_ == null) {
-          phone_ = java.util.Collections.emptyList();
+        birthday_ = 0L;
+
+        address_ = "";
+
+        if (carsBuilder_ == null) {
+          cars_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
         } else {
-          phoneBuilder_.clear();
+          carsBuilder_.clear();
         }
-        internalGetMutableTags().clear();
-        if (detailsBuilder_ == null) {
-          details_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-        } else {
-          detailsBuilder_.clear();
-        }
+        internalGetMutableOther().clear();
         return this;
       }
 
@@ -1983,30 +832,22 @@ public final class PersonTestProtos {
       public PersonTest buildPartial() {
         PersonTest result = new PersonTest(this);
         int from_bitField0_ = bitField0_;
-        result.id_ = id_;
         result.name_ = name_;
-        result.email_ = email_;
+        result.age_ = age_;
         result.sex_ = sex_;
-        if (phoneBuilder_ == null) {
+        result.birthday_ = birthday_;
+        result.address_ = address_;
+        if (carsBuilder_ == null) {
           if (((bitField0_ & 0x00000001) != 0)) {
-            phone_ = java.util.Collections.unmodifiableList(phone_);
+            cars_ = java.util.Collections.unmodifiableList(cars_);
             bitField0_ = (bitField0_ & ~0x00000001);
           }
-          result.phone_ = phone_;
+          result.cars_ = cars_;
         } else {
-          result.phone_ = phoneBuilder_.build();
+          result.cars_ = carsBuilder_.build();
         }
-        result.tags_ = internalGetTags();
-        result.tags_.makeImmutable();
-        if (detailsBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) != 0)) {
-            details_ = java.util.Collections.unmodifiableList(details_);
-            bitField0_ = (bitField0_ & ~0x00000004);
-          }
-          result.details_ = details_;
-        } else {
-          result.details_ = detailsBuilder_.build();
-        }
+        result.other_ = internalGetOther();
+        result.other_.makeImmutable();
         onBuilt();
         return result;
       }
@@ -2055,74 +896,51 @@ public final class PersonTestProtos {
 
       public Builder mergeFrom(PersonTest other) {
         if (other == PersonTest.getDefaultInstance()) return this;
-        if (other.getId() != 0) {
-          setId(other.getId());
-        }
         if (!other.getName().isEmpty()) {
           name_ = other.name_;
           onChanged();
         }
-        if (!other.getEmail().isEmpty()) {
-          email_ = other.email_;
+        if (other.getAge() != 0) {
+          setAge(other.getAge());
+        }
+        if (other.getSex() != false) {
+          setSex(other.getSex());
+        }
+        if (other.getBirthday() != 0L) {
+          setBirthday(other.getBirthday());
+        }
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
           onChanged();
         }
-        if (other.sex_ != 0) {
-          setSexValue(other.getSexValue());
-        }
-        if (phoneBuilder_ == null) {
-          if (!other.phone_.isEmpty()) {
-            if (phone_.isEmpty()) {
-              phone_ = other.phone_;
+        if (carsBuilder_ == null) {
+          if (!other.cars_.isEmpty()) {
+            if (cars_.isEmpty()) {
+              cars_ = other.cars_;
               bitField0_ = (bitField0_ & ~0x00000001);
             } else {
-              ensurePhoneIsMutable();
-              phone_.addAll(other.phone_);
+              ensureCarsIsMutable();
+              cars_.addAll(other.cars_);
             }
             onChanged();
           }
         } else {
-          if (!other.phone_.isEmpty()) {
-            if (phoneBuilder_.isEmpty()) {
-              phoneBuilder_.dispose();
-              phoneBuilder_ = null;
-              phone_ = other.phone_;
+          if (!other.cars_.isEmpty()) {
+            if (carsBuilder_.isEmpty()) {
+              carsBuilder_.dispose();
+              carsBuilder_ = null;
+              cars_ = other.cars_;
               bitField0_ = (bitField0_ & ~0x00000001);
-              phoneBuilder_ = 
+              carsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPhoneFieldBuilder() : null;
+                   getCarsFieldBuilder() : null;
             } else {
-              phoneBuilder_.addAllMessages(other.phone_);
+              carsBuilder_.addAllMessages(other.cars_);
             }
           }
         }
-        internalGetMutableTags().mergeFrom(
-            other.internalGetTags());
-        if (detailsBuilder_ == null) {
-          if (!other.details_.isEmpty()) {
-            if (details_.isEmpty()) {
-              details_ = other.details_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-            } else {
-              ensureDetailsIsMutable();
-              details_.addAll(other.details_);
-            }
-            onChanged();
-          }
-        } else {
-          if (!other.details_.isEmpty()) {
-            if (detailsBuilder_.isEmpty()) {
-              detailsBuilder_.dispose();
-              detailsBuilder_ = null;
-              details_ = other.details_;
-              bitField0_ = (bitField0_ & ~0x00000004);
-              detailsBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getDetailsFieldBuilder() : null;
-            } else {
-              detailsBuilder_.addAllMessages(other.details_);
-            }
-          }
-        }
+        internalGetMutableOther().mergeFrom(
+            other.internalGetOther());
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2153,56 +971,9 @@ public final class PersonTestProtos {
       }
       private int bitField0_;
 
-      private int id_ ;
-      /**
-       * <pre>
-       * int 类型
-       * </pre>
-       *
-       * <code>int32 id = 1;</code>
-       * @return The id.
-       */
-      @Override
-      public int getId() {
-        return id_;
-      }
-      /**
-       * <pre>
-       * int 类型
-       * </pre>
-       *
-       * <code>int32 id = 1;</code>
-       * @param value The id to set.
-       * @return This builder for chaining.
-       */
-      public Builder setId(int value) {
-        
-        id_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * int 类型
-       * </pre>
-       *
-       * <code>int32 id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearId() {
-        
-        id_ = 0;
-        onChanged();
-        return this;
-      }
-
       private Object name_ = "";
       /**
-       * <pre>
-       * string 类型
-       * </pre>
-       *
-       * <code>string name = 2;</code>
+       * <code>string name = 1;</code>
        * @return The name.
        */
       public String getName() {
@@ -2218,18 +989,14 @@ public final class PersonTestProtos {
         }
       }
       /**
-       * <pre>
-       * string 类型
-       * </pre>
-       *
-       * <code>string name = 2;</code>
+       * <code>string name = 1;</code>
        * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
         Object ref = name_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
           name_ = b;
@@ -2239,11 +1006,7 @@ public final class PersonTestProtos {
         }
       }
       /**
-       * <pre>
-       * string 类型
-       * </pre>
-       *
-       * <code>string name = 2;</code>
+       * <code>string name = 1;</code>
        * @param value The name to set.
        * @return This builder for chaining.
        */
@@ -2252,31 +1015,23 @@ public final class PersonTestProtos {
         if (value == null) {
     throw new NullPointerException();
   }
-  
+
         name_ = value;
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * string 类型
-       * </pre>
-       *
-       * <code>string name = 2;</code>
+       * <code>string name = 1;</code>
        * @return This builder for chaining.
        */
       public Builder clearName() {
-        
+
         name_ = getDefaultInstance().getName();
         onChanged();
         return this;
       }
       /**
-       * <pre>
-       * string 类型
-       * </pre>
-       *
-       * <code>string name = 2;</code>
+       * <code>string name = 1;</code>
        * @param value The bytes for name to set.
        * @return This builder for chaining.
        */
@@ -2286,588 +1041,515 @@ public final class PersonTestProtos {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
+
         name_ = value;
         onChanged();
         return this;
       }
 
-      private Object email_ = "";
+      private int age_ ;
       /**
-       * <code>string email = 3;</code>
-       * @return The email.
+       * <code>int32 age = 2;</code>
+       * @return The age.
        */
-      public String getEmail() {
-        Object ref = email_;
+      @Override
+      public int getAge() {
+        return age_;
+      }
+      /**
+       * <code>int32 age = 2;</code>
+       * @param value The age to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAge(int value) {
+
+        age_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 age = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAge() {
+
+        age_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean sex_ ;
+      /**
+       * <code>bool sex = 3;</code>
+       * @return The sex.
+       */
+      @Override
+      public boolean getSex() {
+        return sex_;
+      }
+      /**
+       * <code>bool sex = 3;</code>
+       * @param value The sex to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSex(boolean value) {
+
+        sex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool sex = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSex() {
+
+        sex_ = false;
+        onChanged();
+        return this;
+      }
+
+      private long birthday_ ;
+      /**
+       * <code>int64 birthday = 4;</code>
+       * @return The birthday.
+       */
+      @Override
+      public long getBirthday() {
+        return birthday_;
+      }
+      /**
+       * <code>int64 birthday = 4;</code>
+       * @param value The birthday to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBirthday(long value) {
+
+        birthday_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 birthday = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBirthday() {
+
+        birthday_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private Object address_ = "";
+      /**
+       * <code>string address = 5;</code>
+       * @return The address.
+       */
+      public String getAddress() {
+        Object ref = address_;
         if (!(ref instanceof String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           String s = bs.toStringUtf8();
-          email_ = s;
+          address_ = s;
           return s;
         } else {
           return (String) ref;
         }
       }
       /**
-       * <code>string email = 3;</code>
-       * @return The bytes for email.
+       * <code>string address = 5;</code>
+       * @return The bytes for address.
        */
       public com.google.protobuf.ByteString
-          getEmailBytes() {
-        Object ref = email_;
+          getAddressBytes() {
+        Object ref = address_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString b =
               com.google.protobuf.ByteString.copyFromUtf8(
                   (String) ref);
-          email_ = b;
+          address_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string email = 3;</code>
-       * @param value The email to set.
+       * <code>string address = 5;</code>
+       * @param value The address to set.
        * @return This builder for chaining.
        */
-      public Builder setEmail(
+      public Builder setAddress(
           String value) {
         if (value == null) {
     throw new NullPointerException();
   }
-  
-        email_ = value;
+
+        address_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string email = 3;</code>
+       * <code>string address = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearEmail() {
-        
-        email_ = getDefaultInstance().getEmail();
+      public Builder clearAddress() {
+
+        address_ = getDefaultInstance().getAddress();
         onChanged();
         return this;
       }
       /**
-       * <code>string email = 3;</code>
-       * @param value The bytes for email to set.
+       * <code>string address = 5;</code>
+       * @param value The bytes for address to set.
        * @return This builder for chaining.
        */
-      public Builder setEmailBytes(
+      public Builder setAddressBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
-        
-        email_ = value;
+
+        address_ = value;
         onChanged();
         return this;
       }
 
-      private int sex_ = 0;
-      /**
-       * <pre>
-       * 枚举类型
-       * </pre>
-       *
-       * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
-       * @return The enum numeric value on the wire for sex.
-       */
-      @Override public int getSexValue() {
-        return sex_;
-      }
-      /**
-       * <pre>
-       * 枚举类型
-       * </pre>
-       *
-       * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
-       * @param value The enum numeric value on the wire for sex to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSexValue(int value) {
-        
-        sex_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 枚举类型
-       * </pre>
-       *
-       * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
-       * @return The sex.
-       */
-      @Override
-      public Sex getSex() {
-        @SuppressWarnings("deprecation")
-        Sex result = Sex.valueOf(sex_);
-        return result == null ? Sex.UNRECOGNIZED : result;
-      }
-      /**
-       * <pre>
-       * 枚举类型
-       * </pre>
-       *
-       * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
-       * @param value The sex to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSex(Sex value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        
-        sex_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * 枚举类型
-       * </pre>
-       *
-       * <code>.jet.protobuf.PersonTest.Sex sex = 4;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearSex() {
-        
-        sex_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private java.util.List<PhoneNumber> phone_ =
+      private java.util.List<Car> cars_ =
         java.util.Collections.emptyList();
-      private void ensurePhoneIsMutable() {
+      private void ensureCarsIsMutable() {
         if (!((bitField0_ & 0x00000001) != 0)) {
-          phone_ = new java.util.ArrayList<PhoneNumber>(phone_);
+          cars_ = new java.util.ArrayList<Car>(cars_);
           bitField0_ |= 0x00000001;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          PhoneNumber, PhoneNumber.Builder, PhoneNumberOrBuilder> phoneBuilder_;
+          Car, Car.Builder, CarOrBuilder> carsBuilder_;
 
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public java.util.List<PhoneNumber> getPhoneList() {
-        if (phoneBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(phone_);
+      public java.util.List<Car> getCarsList() {
+        if (carsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(cars_);
         } else {
-          return phoneBuilder_.getMessageList();
+          return carsBuilder_.getMessageList();
         }
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public int getPhoneCount() {
-        if (phoneBuilder_ == null) {
-          return phone_.size();
+      public int getCarsCount() {
+        if (carsBuilder_ == null) {
+          return cars_.size();
         } else {
-          return phoneBuilder_.getCount();
+          return carsBuilder_.getCount();
         }
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public PhoneNumber getPhone(int index) {
-        if (phoneBuilder_ == null) {
-          return phone_.get(index);
+      public Car getCars(int index) {
+        if (carsBuilder_ == null) {
+          return cars_.get(index);
         } else {
-          return phoneBuilder_.getMessage(index);
+          return carsBuilder_.getMessage(index);
         }
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder setPhone(
-          int index, PhoneNumber value) {
-        if (phoneBuilder_ == null) {
+      public Builder setCars(
+          int index, Car value) {
+        if (carsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensurePhoneIsMutable();
-          phone_.set(index, value);
+          ensureCarsIsMutable();
+          cars_.set(index, value);
           onChanged();
         } else {
-          phoneBuilder_.setMessage(index, value);
+          carsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder setPhone(
-          int index, PhoneNumber.Builder builderForValue) {
-        if (phoneBuilder_ == null) {
-          ensurePhoneIsMutable();
-          phone_.set(index, builderForValue.build());
+      public Builder setCars(
+          int index, Car.Builder builderForValue) {
+        if (carsBuilder_ == null) {
+          ensureCarsIsMutable();
+          cars_.set(index, builderForValue.build());
           onChanged();
         } else {
-          phoneBuilder_.setMessage(index, builderForValue.build());
+          carsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder addPhone(PhoneNumber value) {
-        if (phoneBuilder_ == null) {
+      public Builder addCars(Car value) {
+        if (carsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensurePhoneIsMutable();
-          phone_.add(value);
+          ensureCarsIsMutable();
+          cars_.add(value);
           onChanged();
         } else {
-          phoneBuilder_.addMessage(value);
+          carsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder addPhone(
-          int index, PhoneNumber value) {
-        if (phoneBuilder_ == null) {
+      public Builder addCars(
+          int index, Car value) {
+        if (carsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensurePhoneIsMutable();
-          phone_.add(index, value);
+          ensureCarsIsMutable();
+          cars_.add(index, value);
           onChanged();
         } else {
-          phoneBuilder_.addMessage(index, value);
+          carsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder addPhone(
-          PhoneNumber.Builder builderForValue) {
-        if (phoneBuilder_ == null) {
-          ensurePhoneIsMutable();
-          phone_.add(builderForValue.build());
+      public Builder addCars(
+          Car.Builder builderForValue) {
+        if (carsBuilder_ == null) {
+          ensureCarsIsMutable();
+          cars_.add(builderForValue.build());
           onChanged();
         } else {
-          phoneBuilder_.addMessage(builderForValue.build());
+          carsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder addPhone(
-          int index, PhoneNumber.Builder builderForValue) {
-        if (phoneBuilder_ == null) {
-          ensurePhoneIsMutable();
-          phone_.add(index, builderForValue.build());
+      public Builder addCars(
+          int index, Car.Builder builderForValue) {
+        if (carsBuilder_ == null) {
+          ensureCarsIsMutable();
+          cars_.add(index, builderForValue.build());
           onChanged();
         } else {
-          phoneBuilder_.addMessage(index, builderForValue.build());
+          carsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder addAllPhone(
-          Iterable<? extends PhoneNumber> values) {
-        if (phoneBuilder_ == null) {
-          ensurePhoneIsMutable();
+      public Builder addAllCars(
+          Iterable<? extends Car> values) {
+        if (carsBuilder_ == null) {
+          ensureCarsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, phone_);
+              values, cars_);
           onChanged();
         } else {
-          phoneBuilder_.addAllMessages(values);
+          carsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder clearPhone() {
-        if (phoneBuilder_ == null) {
-          phone_ = java.util.Collections.emptyList();
+      public Builder clearCars() {
+        if (carsBuilder_ == null) {
+          cars_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000001);
           onChanged();
         } else {
-          phoneBuilder_.clear();
+          carsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public Builder removePhone(int index) {
-        if (phoneBuilder_ == null) {
-          ensurePhoneIsMutable();
-          phone_.remove(index);
+      public Builder removeCars(int index) {
+        if (carsBuilder_ == null) {
+          ensureCarsIsMutable();
+          cars_.remove(index);
           onChanged();
         } else {
-          phoneBuilder_.remove(index);
+          carsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public PhoneNumber.Builder getPhoneBuilder(
+      public Car.Builder getCarsBuilder(
           int index) {
-        return getPhoneFieldBuilder().getBuilder(index);
+        return getCarsFieldBuilder().getBuilder(index);
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public PhoneNumberOrBuilder getPhoneOrBuilder(
+      public CarOrBuilder getCarsOrBuilder(
           int index) {
-        if (phoneBuilder_ == null) {
-          return phone_.get(index);  } else {
-          return phoneBuilder_.getMessageOrBuilder(index);
+        if (carsBuilder_ == null) {
+          return cars_.get(index);  } else {
+          return carsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public java.util.List<? extends PhoneNumberOrBuilder>
-           getPhoneOrBuilderList() {
-        if (phoneBuilder_ != null) {
-          return phoneBuilder_.getMessageOrBuilderList();
+      public java.util.List<? extends CarOrBuilder>
+           getCarsOrBuilderList() {
+        if (carsBuilder_ != null) {
+          return carsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(phone_);
+          return java.util.Collections.unmodifiableList(cars_);
         }
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public PhoneNumber.Builder addPhoneBuilder() {
-        return getPhoneFieldBuilder().addBuilder(
-            PhoneNumber.getDefaultInstance());
+      public Car.Builder addCarsBuilder() {
+        return getCarsFieldBuilder().addBuilder(
+            Car.getDefaultInstance());
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public PhoneNumber.Builder addPhoneBuilder(
+      public Car.Builder addCarsBuilder(
           int index) {
-        return getPhoneFieldBuilder().addBuilder(
-            index, PhoneNumber.getDefaultInstance());
+        return getCarsFieldBuilder().addBuilder(
+            index, Car.getDefaultInstance());
       }
       /**
-       * <pre>
-       * 引用下面定义的 PhoneNumber 类型的 message
-       * </pre>
-       *
-       * <code>repeated .jet.protobuf.PersonTest.PhoneNumber phone = 5;</code>
+       * <code>repeated .jet.protobuf.Car cars = 6;</code>
        */
-      public java.util.List<PhoneNumber.Builder>
-           getPhoneBuilderList() {
-        return getPhoneFieldBuilder().getBuilderList();
+      public java.util.List<Car.Builder>
+           getCarsBuilderList() {
+        return getCarsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          PhoneNumber, PhoneNumber.Builder, PhoneNumberOrBuilder>
-          getPhoneFieldBuilder() {
-        if (phoneBuilder_ == null) {
-          phoneBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              PhoneNumber, PhoneNumber.Builder, PhoneNumberOrBuilder>(
-                  phone_,
+          Car, Car.Builder, CarOrBuilder>
+          getCarsFieldBuilder() {
+        if (carsBuilder_ == null) {
+          carsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              Car, Car.Builder, CarOrBuilder>(
+                  cars_,
                   ((bitField0_ & 0x00000001) != 0),
                   getParentForChildren(),
                   isClean());
-          phone_ = null;
+          cars_ = null;
         }
-        return phoneBuilder_;
+        return carsBuilder_;
       }
 
       private com.google.protobuf.MapField<
-          String, String> tags_;
+          String, String> other_;
       private com.google.protobuf.MapField<String, String>
-      internalGetTags() {
-        if (tags_ == null) {
+      internalGetOther() {
+        if (other_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
-              TagsDefaultEntryHolder.defaultEntry);
+              OtherDefaultEntryHolder.defaultEntry);
         }
-        return tags_;
+        return other_;
       }
       private com.google.protobuf.MapField<String, String>
-      internalGetMutableTags() {
+      internalGetMutableOther() {
         onChanged();;
-        if (tags_ == null) {
-          tags_ = com.google.protobuf.MapField.newMapField(
-              TagsDefaultEntryHolder.defaultEntry);
+        if (other_ == null) {
+          other_ = com.google.protobuf.MapField.newMapField(
+              OtherDefaultEntryHolder.defaultEntry);
         }
-        if (!tags_.isMutable()) {
-          tags_ = tags_.copy();
+        if (!other_.isMutable()) {
+          other_ = other_.copy();
         }
-        return tags_;
+        return other_;
       }
 
-      public int getTagsCount() {
-        return internalGetTags().getMap().size();
+      public int getOtherCount() {
+        return internalGetOther().getMap().size();
       }
       /**
-       * <pre>
-       * map 类型
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; tags = 6;</code>
+       * <code>map&lt;string, string&gt; other = 7;</code>
        */
 
       @Override
-      public boolean containsTags(
+      public boolean containsOther(
           String key) {
         if (key == null) { throw new NullPointerException(); }
-        return internalGetTags().getMap().containsKey(key);
+        return internalGetOther().getMap().containsKey(key);
       }
       /**
-       * Use {@link #getTagsMap()} instead.
+       * Use {@link #getOtherMap()} instead.
        */
       @Override
       @Deprecated
-      public java.util.Map<String, String> getTags() {
-        return getTagsMap();
+      public java.util.Map<String, String> getOther() {
+        return getOtherMap();
       }
       /**
-       * <pre>
-       * map 类型
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; tags = 6;</code>
+       * <code>map&lt;string, string&gt; other = 7;</code>
        */
       @Override
 
-      public java.util.Map<String, String> getTagsMap() {
-        return internalGetTags().getMap();
+      public java.util.Map<String, String> getOtherMap() {
+        return internalGetOther().getMap();
       }
       /**
-       * <pre>
-       * map 类型
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; tags = 6;</code>
+       * <code>map&lt;string, string&gt; other = 7;</code>
        */
       @Override
 
-      public String getTagsOrDefault(
+      public String getOtherOrDefault(
           String key,
           String defaultValue) {
         if (key == null) { throw new NullPointerException(); }
         java.util.Map<String, String> map =
-            internalGetTags().getMap();
+            internalGetOther().getMap();
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <pre>
-       * map 类型
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; tags = 6;</code>
+       * <code>map&lt;string, string&gt; other = 7;</code>
        */
       @Override
 
-      public String getTagsOrThrow(
+      public String getOtherOrThrow(
           String key) {
         if (key == null) { throw new NullPointerException(); }
         java.util.Map<String, String> map =
-            internalGetTags().getMap();
+            internalGetOther().getMap();
         if (!map.containsKey(key)) {
           throw new IllegalArgumentException();
         }
         return map.get(key);
       }
 
-      public Builder clearTags() {
-        internalGetMutableTags().getMutableMap()
+      public Builder clearOther() {
+        internalGetMutableOther().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <pre>
-       * map 类型
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; tags = 6;</code>
+       * <code>map&lt;string, string&gt; other = 7;</code>
        */
 
-      public Builder removeTags(
+      public Builder removeOther(
           String key) {
         if (key == null) { throw new NullPointerException(); }
-        internalGetMutableTags().getMutableMap()
+        internalGetMutableOther().getMutableMap()
             .remove(key);
         return this;
       }
@@ -2876,350 +1558,30 @@ public final class PersonTestProtos {
        */
       @Deprecated
       public java.util.Map<String, String>
-      getMutableTags() {
-        return internalGetMutableTags().getMutableMap();
+      getMutableOther() {
+        return internalGetMutableOther().getMutableMap();
       }
       /**
-       * <pre>
-       * map 类型
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; tags = 6;</code>
+       * <code>map&lt;string, string&gt; other = 7;</code>
        */
-      public Builder putTags(
+      public Builder putOther(
           String key,
           String value) {
         if (key == null) { throw new NullPointerException(); }
         if (value == null) { throw new NullPointerException(); }
-        internalGetMutableTags().getMutableMap()
+        internalGetMutableOther().getMutableMap()
             .put(key, value);
         return this;
       }
       /**
-       * <pre>
-       * map 类型
-       * </pre>
-       *
-       * <code>map&lt;string, string&gt; tags = 6;</code>
+       * <code>map&lt;string, string&gt; other = 7;</code>
        */
 
-      public Builder putAllTags(
+      public Builder putAllOther(
           java.util.Map<String, String> values) {
-        internalGetMutableTags().getMutableMap()
+        internalGetMutableOther().getMutableMap()
             .putAll(values);
         return this;
-      }
-
-      private java.util.List<com.google.protobuf.Any> details_ =
-        java.util.Collections.emptyList();
-      private void ensureDetailsIsMutable() {
-        if (!((bitField0_ & 0x00000004) != 0)) {
-          details_ = new java.util.ArrayList<com.google.protobuf.Any>(details_);
-          bitField0_ |= 0x00000004;
-         }
-      }
-
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> detailsBuilder_;
-
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public java.util.List<com.google.protobuf.Any> getDetailsList() {
-        if (detailsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(details_);
-        } else {
-          return detailsBuilder_.getMessageList();
-        }
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public int getDetailsCount() {
-        if (detailsBuilder_ == null) {
-          return details_.size();
-        } else {
-          return detailsBuilder_.getCount();
-        }
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public com.google.protobuf.Any getDetails(int index) {
-        if (detailsBuilder_ == null) {
-          return details_.get(index);
-        } else {
-          return detailsBuilder_.getMessage(index);
-        }
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder setDetails(
-          int index, com.google.protobuf.Any value) {
-        if (detailsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDetailsIsMutable();
-          details_.set(index, value);
-          onChanged();
-        } else {
-          detailsBuilder_.setMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder setDetails(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
-        if (detailsBuilder_ == null) {
-          ensureDetailsIsMutable();
-          details_.set(index, builderForValue.build());
-          onChanged();
-        } else {
-          detailsBuilder_.setMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder addDetails(com.google.protobuf.Any value) {
-        if (detailsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDetailsIsMutable();
-          details_.add(value);
-          onChanged();
-        } else {
-          detailsBuilder_.addMessage(value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder addDetails(
-          int index, com.google.protobuf.Any value) {
-        if (detailsBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          ensureDetailsIsMutable();
-          details_.add(index, value);
-          onChanged();
-        } else {
-          detailsBuilder_.addMessage(index, value);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder addDetails(
-          com.google.protobuf.Any.Builder builderForValue) {
-        if (detailsBuilder_ == null) {
-          ensureDetailsIsMutable();
-          details_.add(builderForValue.build());
-          onChanged();
-        } else {
-          detailsBuilder_.addMessage(builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder addDetails(
-          int index, com.google.protobuf.Any.Builder builderForValue) {
-        if (detailsBuilder_ == null) {
-          ensureDetailsIsMutable();
-          details_.add(index, builderForValue.build());
-          onChanged();
-        } else {
-          detailsBuilder_.addMessage(index, builderForValue.build());
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder addAllDetails(
-          Iterable<? extends com.google.protobuf.Any> values) {
-        if (detailsBuilder_ == null) {
-          ensureDetailsIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, details_);
-          onChanged();
-        } else {
-          detailsBuilder_.addAllMessages(values);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder clearDetails() {
-        if (detailsBuilder_ == null) {
-          details_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
-          onChanged();
-        } else {
-          detailsBuilder_.clear();
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public Builder removeDetails(int index) {
-        if (detailsBuilder_ == null) {
-          ensureDetailsIsMutable();
-          details_.remove(index);
-          onChanged();
-        } else {
-          detailsBuilder_.remove(index);
-        }
-        return this;
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public com.google.protobuf.Any.Builder getDetailsBuilder(
-          int index) {
-        return getDetailsFieldBuilder().getBuilder(index);
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public com.google.protobuf.AnyOrBuilder getDetailsOrBuilder(
-          int index) {
-        if (detailsBuilder_ == null) {
-          return details_.get(index);  } else {
-          return detailsBuilder_.getMessageOrBuilder(index);
-        }
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public java.util.List<? extends com.google.protobuf.AnyOrBuilder> 
-           getDetailsOrBuilderList() {
-        if (detailsBuilder_ != null) {
-          return detailsBuilder_.getMessageOrBuilderList();
-        } else {
-          return java.util.Collections.unmodifiableList(details_);
-        }
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public com.google.protobuf.Any.Builder addDetailsBuilder() {
-        return getDetailsFieldBuilder().addBuilder(
-            com.google.protobuf.Any.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public com.google.protobuf.Any.Builder addDetailsBuilder(
-          int index) {
-        return getDetailsFieldBuilder().addBuilder(
-            index, com.google.protobuf.Any.getDefaultInstance());
-      }
-      /**
-       * <pre>
-       * 使用 google 的 any 类型
-       * </pre>
-       *
-       * <code>repeated .google.protobuf.Any details = 7;</code>
-       */
-      public java.util.List<com.google.protobuf.Any.Builder> 
-           getDetailsBuilderList() {
-        return getDetailsFieldBuilder().getBuilderList();
-      }
-      private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder> 
-          getDetailsFieldBuilder() {
-        if (detailsBuilder_ == null) {
-          detailsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.protobuf.Any, com.google.protobuf.Any.Builder, com.google.protobuf.AnyOrBuilder>(
-                  details_,
-                  ((bitField0_ & 0x00000004) != 0),
-                  getParentForChildren(),
-                  isClean());
-          details_ = null;
-        }
-        return detailsBuilder_;
       }
       @Override
       public final Builder setUnknownFields(
@@ -3274,21 +1636,739 @@ public final class PersonTestProtos {
 
   }
 
+  public interface CarOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:jet.protobuf.Car)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    String getName();
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>string color = 2;</code>
+     * @return The color.
+     */
+    String getColor();
+    /**
+     * <code>string color = 2;</code>
+     * @return The bytes for color.
+     */
+    com.google.protobuf.ByteString
+        getColorBytes();
+  }
+  /**
+   * Protobuf type {@code jet.protobuf.Car}
+   */
+  public static final class Car extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:jet.protobuf.Car)
+      CarOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use Car.newBuilder() to construct.
+    private Car(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private Car() {
+      name_ = "";
+      color_ = "";
+    }
+
+    @Override
+    @SuppressWarnings({"unused"})
+    protected Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new Car();
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return this.unknownFields;
+    }
+    private Car(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new NullPointerException();
+      }
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10: {
+              String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
+            }
+            case 18: {
+              String s = input.readStringRequireUtf8();
+
+              color_ = s;
+              break;
+            }
+            default: {
+              if (!parseUnknownField(
+                  input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return PersonTestProtos.internal_static_jet_protobuf_Car_descriptor;
+    }
+
+    @Override
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return PersonTestProtos.internal_static_jet_protobuf_Car_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              Car.class, Builder.class);
+    }
+
+    public static final int NAME_FIELD_NUMBER = 1;
+    private volatile Object name_;
+    /**
+     * <code>string name = 1;</code>
+     * @return The name.
+     */
+    @Override
+    public String getName() {
+      Object ref = name_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        name_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string name = 1;</code>
+     * @return The bytes for name.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      Object ref = name_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int COLOR_FIELD_NUMBER = 2;
+    private volatile Object color_;
+    /**
+     * <code>string color = 2;</code>
+     * @return The color.
+     */
+    @Override
+    public String getColor() {
+      Object ref = color_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        color_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string color = 2;</code>
+     * @return The bytes for color.
+     */
+    @Override
+    public com.google.protobuf.ByteString
+        getColorBytes() {
+      Object ref = color_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        color_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      }
+      if (!getColorBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, color_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      }
+      if (!getColorBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, color_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof Car)) {
+        return super.equals(obj);
+      }
+      Car other = (Car) obj;
+
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getColor()
+          .equals(other.getColor())) return false;
+      if (!unknownFields.equals(other.unknownFields)) return false;
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + COLOR_FIELD_NUMBER;
+      hash = (53 * hash) + getColor().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static Car parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Car parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Car parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Car parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Car parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static Car parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static Car parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Car parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Car parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static Car parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static Car parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static Car parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(Car prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code jet.protobuf.Car}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:jet.protobuf.Car)
+        CarOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return PersonTestProtos.internal_static_jet_protobuf_Car_descriptor;
+      }
+
+      @Override
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return PersonTestProtos.internal_static_jet_protobuf_Car_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                Car.class, Builder.class);
+      }
+
+      // Construct using com.jet.protobuf.PersonTestProtos.Car.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3
+                .alwaysUseFieldBuilders) {
+        }
+      }
+      @Override
+      public Builder clear() {
+        super.clear();
+        name_ = "";
+
+        color_ = "";
+
+        return this;
+      }
+
+      @Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return PersonTestProtos.internal_static_jet_protobuf_Car_descriptor;
+      }
+
+      @Override
+      public Car getDefaultInstanceForType() {
+        return Car.getDefaultInstance();
+      }
+
+      @Override
+      public Car build() {
+        Car result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @Override
+      public Car buildPartial() {
+        Car result = new Car(this);
+        result.name_ = name_;
+        result.color_ = color_;
+        onBuilt();
+        return result;
+      }
+
+      @Override
+      public Builder clone() {
+        return super.clone();
+      }
+      @Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.setField(field, value);
+      }
+      @Override
+      public Builder clearField(
+          com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+      @Override
+      public Builder clearOneof(
+          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+      @Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index, Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+      @Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          Object value) {
+        return super.addRepeatedField(field, value);
+      }
+      @Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof Car) {
+          return mergeFrom((Car)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(Car other) {
+        if (other == Car.getDefaultInstance()) return this;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getColor().isEmpty()) {
+          color_ = other.color_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        Car parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (Car) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private Object name_ = "";
+      /**
+       * <code>string name = 1;</code>
+       * @return The name.
+       */
+      public String getName() {
+        Object ref = name_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          name_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return The bytes for name.
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setName(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 1;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object color_ = "";
+      /**
+       * <code>string color = 2;</code>
+       * @return The color.
+       */
+      public String getColor() {
+        Object ref = color_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          color_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>string color = 2;</code>
+       * @return The bytes for color.
+       */
+      public com.google.protobuf.ByteString
+          getColorBytes() {
+        Object ref = color_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          color_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string color = 2;</code>
+       * @param value The color to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColor(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        color_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string color = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearColor() {
+        
+        color_ = getDefaultInstance().getColor();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string color = 2;</code>
+       * @param value The bytes for color to set.
+       * @return This builder for chaining.
+       */
+      public Builder setColorBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        color_ = value;
+        onChanged();
+        return this;
+      }
+      @Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:jet.protobuf.Car)
+    }
+
+    // @@protoc_insertion_point(class_scope:jet.protobuf.Car)
+    private static final Car DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new Car();
+    }
+
+    public static Car getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Car>
+        PARSER = new com.google.protobuf.AbstractParser<Car>() {
+      @Override
+      public Car parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new Car(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<Car> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<Car> getParserForType() {
+      return PARSER;
+    }
+
+    @Override
+    public Car getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_jet_protobuf_PersonTest_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_jet_protobuf_PersonTest_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_jet_protobuf_PersonTest_TagsEntry_descriptor;
+    internal_static_jet_protobuf_PersonTest_OtherEntry_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_jet_protobuf_PersonTest_TagsEntry_fieldAccessorTable;
+      internal_static_jet_protobuf_PersonTest_OtherEntry_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_jet_protobuf_PersonTest_PhoneNumber_descriptor;
+    internal_static_jet_protobuf_Car_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_jet_protobuf_PersonTest_PhoneNumber_fieldAccessorTable;
+      internal_static_jet_protobuf_Car_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -3298,46 +2378,38 @@ public final class PersonTestProtos {
       descriptor;
   static {
     String[] descriptorData = {
-      "\n\017JetProtos.proto\022\014jet.protobuf\032\031google/" +
-      "protobuf/any.proto\"\320\003\n\nPersonTest\022\n\n\002id\030" +
-      "\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022)\n\003se" +
-      "x\030\004 \001(\0162\034.jet.protobuf.PersonTest.Sex\0223\n" +
-      "\005phone\030\005 \003(\0132$.jet.protobuf.PersonTest.P" +
-      "honeNumber\0220\n\004tags\030\006 \003(\0132\".jet.protobuf." +
-      "PersonTest.TagsEntry\022%\n\007details\030\007 \003(\0132\024." +
-      "google.protobuf.Any\032+\n\tTagsEntry\022\013\n\003key\030" +
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032\210\001\n\013PhoneNumber" +
-      "\022\016\n\006number\030\001 \001(\t\022<\n\004type\030\002 \001(\0162..jet.pro" +
-      "tobuf.PersonTest.PhoneNumber.PhoneType\"+" +
-      "\n\tPhoneType\022\n\n\006MOBILE\020\000\022\010\n\004HOME\020\001\022\010\n\004WOR" +
-      "K\020\002\"(\n\003Sex\022\013\n\007DEFAULT\020\000\022\010\n\004MALE\020\001\022\n\n\006Fem" +
-      "ale\020\002B$\n\020com.jet.protobufB\020PersonTestPro" +
-      "tosb\006proto3"
+      "\n\017JetProtos.proto\022\014jet.protobuf\"\332\001\n\nPers" +
+      "onTest\022\014\n\004name\030\001 \001(\t\022\013\n\003age\030\002 \001(\005\022\013\n\003sex" +
+      "\030\003 \001(\010\022\020\n\010birthday\030\004 \001(\003\022\017\n\007address\030\005 \001(" +
+      "\t\022\037\n\004cars\030\006 \003(\0132\021.jet.protobuf.Car\0222\n\005ot" +
+      "her\030\007 \003(\0132#.jet.protobuf.PersonTest.Othe" +
+      "rEntry\032,\n\nOtherEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001\"\"\n\003Car\022\014\n\004name\030\001 \001(\t\022\r\n\005col" +
+      "or\030\002 \001(\tB$\n\020com.jet.protobufB\020PersonTest" +
+      "Protosb\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.AnyProto.getDescriptor(),
         });
     internal_static_jet_protobuf_PersonTest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_jet_protobuf_PersonTest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_jet_protobuf_PersonTest_descriptor,
-        new String[] { "Id", "Name", "Email", "Sex", "Phone", "Tags", "Details", });
-    internal_static_jet_protobuf_PersonTest_TagsEntry_descriptor =
+        new String[] { "Name", "Age", "Sex", "Birthday", "Address", "Cars", "Other", });
+    internal_static_jet_protobuf_PersonTest_OtherEntry_descriptor =
       internal_static_jet_protobuf_PersonTest_descriptor.getNestedTypes().get(0);
-    internal_static_jet_protobuf_PersonTest_TagsEntry_fieldAccessorTable = new
+    internal_static_jet_protobuf_PersonTest_OtherEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_jet_protobuf_PersonTest_TagsEntry_descriptor,
+        internal_static_jet_protobuf_PersonTest_OtherEntry_descriptor,
         new String[] { "Key", "Value", });
-    internal_static_jet_protobuf_PersonTest_PhoneNumber_descriptor =
-      internal_static_jet_protobuf_PersonTest_descriptor.getNestedTypes().get(1);
-    internal_static_jet_protobuf_PersonTest_PhoneNumber_fieldAccessorTable = new
+    internal_static_jet_protobuf_Car_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_jet_protobuf_Car_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_jet_protobuf_PersonTest_PhoneNumber_descriptor,
-        new String[] { "Number", "Type", });
-    com.google.protobuf.AnyProto.getDescriptor();
+        internal_static_jet_protobuf_Car_descriptor,
+        new String[] { "Name", "Color", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

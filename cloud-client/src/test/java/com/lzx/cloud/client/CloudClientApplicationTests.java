@@ -4,12 +4,14 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.util.JsonFormat;
 import com.lzx.cloud.client.entity.User;
 import com.lzx.cloud.client.util.HttpUtils;
 import com.lzx.cloud.protoc.PersonTestProtos;
-import com.netflix.discovery.CommonConstants;
+import lombok.Data;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -17,30 +19,23 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.BeanUtils;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import javax.management.ObjectName;
-import javax.validation.constraints.NotNull;
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.lang.reflect.Field;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.math.BigInteger;
-import java.security.MessageDigest;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -49,7 +44,6 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -457,24 +451,16 @@ public class CloudClientApplicationTests {
     public void testProtoc(){
         try {
             /** Step1：生成 personTest 对象 */
-            // personTest 构造器
-            PersonTestProtos.PersonTest.Builder personBuilder = PersonTestProtos.PersonTest.newBuilder();
-            // personTest 赋值
-            personBuilder.setName("Jet Chen");
-            personBuilder.setEmail("ckk505214992@gmail.com");
-            personBuilder.setSex(PersonTestProtos.PersonTest.Sex.MALE);
+            PersonTestProtos.PersonTest.Builder builder = PersonTestProtos.PersonTest.newBuilder();
 
-            // 内部的 PhoneNumber 构造器
-            PersonTestProtos.PersonTest.PhoneNumber.Builder phoneNumberBuilder = PersonTestProtos.PersonTest.PhoneNumber.newBuilder();
-            // PhoneNumber 赋值
-            phoneNumberBuilder.setType(PersonTestProtos.PersonTest.PhoneNumber.PhoneType.MOBILE);
-            phoneNumberBuilder.setNumber("17717037257");
-
-            // personTest 设置 PhoneNumber
-            personBuilder.addPhone(phoneNumberBuilder);
-
-            // 生成 personTest 对象
-            PersonTestProtos.PersonTest personTest = personBuilder.build();
+            builder.setName("Mrzhang")
+                    .setAge(18)
+                    .setSex(true)
+                    .setBirthday(System.currentTimeMillis())
+                    .setAddress("军事基地")
+                    .addCars(0, PersonTestProtos.Car.newBuilder().setName("兰博基尼").setColor("Red").build())
+                    .putOther("描述", "暂无");
+            PersonTestProtos.PersonTest personTest = builder.build();
 
             /** Step2：序列化和反序列化 */
             // 方式一 byte[]：
@@ -489,11 +475,40 @@ public class CloudClientApplicationTests {
             // 方式二 ByteString：
             // 序列化
             ByteString byteString = personTest.toByteString();
-            System.out.println(byteString.toString());
-            System.out.println(personTest);
+//            System.out.println(byteString.toString());
+//            System.out.println(personTest.toBuilder().toString());
+//            System.out.println(Arrays.toString(personTest.toByteArray()));
+//            System.out.println(personTest);
             // 反序列化
             PersonTestProtos.PersonTest personTestResult = PersonTestProtos.PersonTest.parseFrom(byteString);
-            System.out.println(String.format("反序列化得到的信息，姓名：%s，性别：%d，手机号：%s", personTestResult.getName(), personTestResult.getSexValue(), personTestResult.getPhone(0).getNumber()));
+//            System.out.println(personTestResult);
+
+
+            //to Json
+            JsonFormat.Printer printer = JsonFormat.printer();
+            String print = "";
+            try {
+                print = printer.includingDefaultValueFields().print(personTest);
+                System.out.println(print);
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
+
+            Gson gson = new Gson();
+            Person myPerson = gson.fromJson(print, Person.class);
+            System.out.println(myPerson);
+            print = gson.toJson(myPerson);
+            System.out.println(print);
+
+            //to Object
+            JsonFormat.Parser parser = JsonFormat.parser();
+            try {
+                PersonTestProtos.PersonTest.Builder newBuilder = PersonTestProtos.PersonTest.newBuilder();
+                parser.ignoringUnknownFields().merge(print, newBuilder);
+                System.out.println(newBuilder.build());
+            } catch (InvalidProtocolBufferException e) {
+                e.printStackTrace();
+            }
 
 
 
@@ -509,6 +524,23 @@ public class CloudClientApplicationTests {
 
         } catch (InvalidProtocolBufferException e) {
             e.printStackTrace();
+        }
+    }
+
+    //添加java bean 此类对性数据库的字段，同时与proto类属性名相同
+    @Data
+    public class Person implements Serializable {
+        private String name;
+        private Integer age;
+        private Boolean sex;
+        private Date dirthday;//此处注意这里是时间类型而非proto类中的long类型
+        private String address;
+        private List<Car> cars = new ArrayList<Car>();
+        private Map<String, String> other = new HashMap<String, String>();
+
+        public class Car implements Serializable {
+            private String name;
+            private String color;
         }
     }
 

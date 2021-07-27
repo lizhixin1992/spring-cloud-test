@@ -34,24 +34,16 @@ public class UserController {
     public ByteString getOne(){
         try {
             /** Step1：生成 personTest 对象 */
-            // personTest 构造器
-            PersonTestProtos.PersonTest.Builder personBuilder = PersonTestProtos.PersonTest.newBuilder();
-            // personTest 赋值
-            personBuilder.setName("Jet Chen");
-            personBuilder.setEmail("ckk505214992@gmail.com");
-            personBuilder.setSex(PersonTestProtos.PersonTest.Sex.MALE);
+            PersonTestProtos.PersonTest.Builder builder = PersonTestProtos.PersonTest.newBuilder();
 
-            // 内部的 PhoneNumber 构造器
-            PersonTestProtos.PersonTest.PhoneNumber.Builder phoneNumberBuilder = PersonTestProtos.PersonTest.PhoneNumber.newBuilder();
-            // PhoneNumber 赋值
-            phoneNumberBuilder.setType(PersonTestProtos.PersonTest.PhoneNumber.PhoneType.MOBILE);
-            phoneNumberBuilder.setNumber("17717037257");
-
-            // personTest 设置 PhoneNumber
-            personBuilder.addPhone(phoneNumberBuilder);
-
-            // 生成 personTest 对象
-            PersonTestProtos.PersonTest personTest = personBuilder.build();
+            builder.setName("Mrzhang")
+                    .setAge(18)
+                    .setSex(true)
+                    .setBirthday(System.currentTimeMillis())
+                    .setAddress("军事基地")
+                    .addCars(0, PersonTestProtos.Car.newBuilder().setName("兰博基尼").setColor("Red").build())
+                    .putOther("描述", "暂无");
+            PersonTestProtos.PersonTest personTest = builder.build();
 
             /** Step2：序列化和反序列化 */
             // 方式一 byte[]：
@@ -72,8 +64,9 @@ public class UserController {
             System.out.println(personTest);
             // 反序列化
             PersonTestProtos.PersonTest personTestResult = PersonTestProtos.PersonTest.parseFrom(byteString);
-            System.out.println(String.format("反序列化得到的信息，姓名：%s，性别：%d，手机号：%s", personTestResult.getName(), personTestResult.getSexValue(), personTestResult.getPhone(0).getNumber()));
+            System.out.println(personTestResult);
             return byteString;
+
 
 
             // 方式三 InputStream
