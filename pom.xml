@@ -34,6 +34,7 @@
         <module>cloud-config-client</module>
         <module>cloud-zipkin</module>
         <module>cloud-zipkin1</module>
+        <module>cloud-gateway</module>
     </modules>
 
     <dependencies>
