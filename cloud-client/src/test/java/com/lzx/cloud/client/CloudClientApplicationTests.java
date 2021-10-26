@@ -3,6 +3,8 @@ package com.lzx.cloud.client;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.parser.Feature;
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.alibaba.fastjson.serializer.ValueFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.protobuf.ByteString;
@@ -32,6 +34,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.security.SecureRandom;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,7 +43,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
 import java.util.TreeMap;
@@ -54,7 +56,7 @@ import java.util.stream.Collectors;
 public class CloudClientApplicationTests {
 
     @Resource
-    private RedisTemplate<String,Object> redisTemplate;
+    private RedisTemplate<String, Object> redisTemplate;
 
     @Test
     public void contextLoads() {
@@ -269,7 +271,7 @@ public class CloudClientApplicationTests {
                 //过滤掉不需要修改的属性
                 return !"class".equals(name);
             }).collect(Collectors.toList()).forEach(x -> map.put(x.getName(), x));
-            if(map.get(fieldName) != null){
+            if (map.get(fieldName) != null) {
                 PropertyDescriptor descriptor = map.get(fieldName);
                 Method readMethod = descriptor.getReadMethod();
                 Object o = readMethod.invoke(user);
@@ -324,7 +326,7 @@ public class CloudClientApplicationTests {
     }
 
     @Test
-    public void testListSub(){
+    public void testListSub() {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
             list.add(i);
@@ -338,18 +340,34 @@ public class CloudClientApplicationTests {
     }
 
     @Test
-    public void testJSON(){
-        User user = new User();
-        user.setId(1L);
-        user.setName("test");
-        user.setAge(12);
-//        user.setUsername("test");
-        user.setRequestId("12121212");
-        user.setBalance(12.0);
-//        String jsonn = JSO
-        String b = null;
-        String a = Optional.ofNullable(b).orElse("");
-        System.out.println(a);
+    public void testJSON() {
+//        User user = new User();
+//        user.setId(1L);
+//        user.setName("test");
+//        user.setAge(12);
+////        user.setUsername("test");
+//        user.setRequestId("12121212");
+//        user.setBalance(12.0);
+
+
+        Map<String, Object> map = new LinkedHashMap<>();
+        map.put("1", null);
+        map.put("2", "9");
+        map.put("3", "12121");
+        map.put("4", "");
+
+        ValueFilter filter = new ValueFilter() {
+            @Override
+            public Object process(Object obj, String s, Object v) {
+                if (v == null)
+                    return "";
+                return v;
+            }
+        };
+
+        System.out.println(JSON.toJSONString(map));
+        System.out.println(JSON.toJSONString(map, filter, SerializerFeature.WriteMapNullValue));
+
     }
 
     @Test
@@ -362,17 +380,17 @@ public class CloudClientApplicationTests {
     }
 
     @Test
-    public void testList1(){
+    public void testList1() {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 15; i++) {
             list.add(i);
         }
         System.out.println(list.size());
-        System.out.println(list.subList(0,15));
+        System.out.println(list.subList(0, 15));
     }
 
     @Test
-    public void testRedisTemplate(){
+    public void testRedisTemplate() {
         Set<String> keys = redisTemplate.keys("navigation#*");
         System.out.println(keys);
 //        Long delete = stringRedisTemplate.delete(keys);
@@ -380,12 +398,12 @@ public class CloudClientApplicationTests {
     }
 
     @Test
-    public void testException(){
+    public void testException() {
         try {
             int a = 1 / 0;
 //            List<Integer> b = new ArrayList();
 //            int c = b.get(10);
-        }catch (Exception e){
+        } catch (Exception e) {
 //            e.printStackTrace();
             System.out.println(e.toString());
             System.out.println(e.getClass());
@@ -395,14 +413,14 @@ public class CloudClientApplicationTests {
     }
 
     @Test
-    public void testEq(){
+    public void testEq() {
         String a = "{\"trackId\":1,\"title\":\"太阳系外射线会影响“土卫六”大气成分\",\"brief\":\"日本东京大学饭野孝浩特任准教授领导的一个研究小组，利用ALMA望远镜对土星卫星“土卫六”的大气进行观测，检测出了微量气体释放的电波。\",\"subTitle\":null,\"vsetType\":null,\"showStyle\":\"0\",\"img1\":\"https://p4.img.cctvpic.com/photoworkspace/2020/02/17/2020021713470783989.jpg\",\"img2\":\"https://p4.img.cctvpic.com/photoworkspace/2020/02/17/2020021713470783989.jpg\",\"img3\":\"\",\"vtype\":\"31\",\"jumpUrl\":\"cntvcbox%3A%2F%2Fapp.cntv.cn%2FimageText%3FitemId%3DARTIv5qu9yIbMudW4Z4MGOjE200217%26title%3D%25E5%25A4%25AA%25E9%2598%25B3%25E7%25B3%25BB%25E5%25A4%2596%25E5%25B0%2584%25E7%25BA%25BF%25E4%25BC%259A%25E5%25BD%25B1%25E5%2593%258D%25E2%2580%259C%25E5%259C%259F%25E5%258D%25AB%25E5%2585%25AD%25E2%2580%259D%25E5%25A4%25A7%25E6%25B0%2594%25E6%2588%2590%25E5%2588%2586\",\"playid\":null,\"itemId\":\"ARTIv5qu9yIbMudW4Z4MGOjE200217\",\"itemUrl\":\"http://news.cctv.com/2020/02/17/ARTIv5qu9yIbMudW4Z4MGOjE200217.shtml\",\"mid\":\"ARTIv5qu9yIbMudW4Z4MGOjE200217\",\"adid\":null,\"videoLength\":null,\"cornerStr\":null,\"cornerStrRb\":null,\"cornerColour\":null,\"startTime\":0,\"endTime\":null,\"isVip\":0,\"hoverText\":null,\"source\":\"土卫六 大气成分\",\"imgRGB\":null,\"isTop\":0,\"recordNumber\":0,\"epgId\":null,\"epgName\":null,\"epgType\":null,\"epgChnlChar\":null,\"epgDarkDiamondPic\":null,\"epgDarkHorizontalPic\":null,\"epgHorizontalPic\":null,\"epgDiamondPic\":null,\"videoSetId\":null,\"homologous\":0,\"is_media_account\":null,\"media_account_id\":null,\"copyright\":null,\"copyrightStart\":null,\"copyrightPeriod\":null,\"skinColor\":null,\"isPublish\":1,\"isDraft\":0}";
 //        String b = "{\"trackId\":2,\"title\":\"太阳系外射线会影响“土卫六”大气成分\",\"brief\":\"日本东京大学饭野孝浩特任准教授领导的一个研究小组，利用ALMA望远镜对土星卫星“土卫六”的大气进行观测，检测出了微量气体释放的电波。\",\"subTitle\":null,\"vsetType\":null,\"showStyle\":\"0\",\"img1\":\"https://p4.img.cctvpic.com/photoworkspace/2020/02/17/2020021713470783989.jpg\",\"img2\":\"https://p4.img.cctvpic.com/photoworkspace/2020/02/17/2020021713470783989.jpg\",\"img3\":\"\",\"vtype\":\"31\",\"jumpUrl\":\"cntvcbox%3A%2F%2Fapp.cntv.cn%2FimageText%3FitemId%3DARTIv5qu9yIbMudW4Z4MGOjE200217%26title%3D%25E5%25A4%25AA%25E9%2598%25B3%25E7%25B3%25BB%25E5%25A4%2596%25E5%25B0%2584%25E7%25BA%25BF%25E4%25BC%259A%25E5%25BD%25B1%25E5%2593%258D%25E2%2580%259C%25E5%259C%259F%25E5%258D%25AB%25E5%2585%25AD%25E2%2580%259D%25E5%25A4%25A7%25E6%25B0%2594%25E6%2588%2590%25E5%2588%2586\",\"playid\":null,\"itemId\":\"ARTIv5qu9yIbMudW4Z4MGOjE200217\",\"itemUrl\":\"http://news.cctv.com/2020/02/17/ARTIv5qu9yIbMudW4Z4MGOjE200217.shtml\",\"mid\":\"ARTIv5qu9yIbMudW4Z4MGOjE200217\",\"adid\":null,\"videoLength\":null,\"cornerStr\":null,\"cornerStrRb\":null,\"cornerColour\":null,\"startTime\":0,\"endTime\":null,\"isVip\":0,\"hoverText\":null,\"source\":\"土卫六 大气成分\",\"imgRGB\":null,\"isTop\":0,\"recordNumber\":0,\"epgId\":null,\"epgName\":null,\"epgType\":null,\"epgChnlChar\":null,\"epgDarkDiamondPic\":null,\"epgDarkHorizontalPic\":null,\"epgHorizontalPic\":null,\"epgDiamondPic\":null,\"videoSetId\":null,\"homologous\":0,\"is_media_account\":null,\"media_account_id\":null,\"copyright\":null,\"copyrightStart\":null,\"copyrightPeriod\":null,\"skinColor\":null,\"isPublish\":1,\"isDraft\":0}";
         System.out.println(a.equals(null));
     }
 
     @Test
-    public void testSplit(){
+    public void testSplit() {
 //        String a = "null#cboxoms";
 //        String[] split = a.split("#");
 //        Arrays.stream(split).forEach(System.out::println);
@@ -416,15 +434,20 @@ public class CloudClientApplicationTests {
 
 
     @Test
-    public void testRandom(){
-        Random random = new Random();
+    public void testRandom() {
+//        Random random = new Random();
+//        for (int i = 0; i < 20; i++) {
+//            System.out.println(random.nextInt(10));
+//        }
+
+        Random random = new SecureRandom();
         for (int i = 0; i < 20; i++) {
-            System.out.println(random.nextInt(10));
+            System.out.println(random.nextInt(4));
         }
     }
 
     @Test
-    public void testHttp(){
+    public void testHttp() {
         String url = "https://app.cctv.com/oms/api/promote/ouzhoubei";
         String s = HttpUtils.sendGet(url, "");
         System.out.println(s);
@@ -448,7 +471,7 @@ public class CloudClientApplicationTests {
     }
 
     @Test
-    public void testProtoc(){
+    public void testProtoc() {
         try {
             /** Step1：生成 personTest 对象 */
             PersonTestProtos.PersonTest.Builder builder = PersonTestProtos.PersonTest.newBuilder();
@@ -469,7 +492,6 @@ public class CloudClientApplicationTests {
             // 反序列化
 //            PersonTestProtos.PersonTest personTestResult = PersonTestProtos.PersonTest.parseFrom(bytes);
 //            System.out.println(String.format("反序列化得到的信息，姓名：%s，性别：%d，手机号：%s", personTestResult.getName(), personTest.getSexValue(), personTest.getPhone(0).getNumber()));
-
 
 
             // 方式二 ByteString：
@@ -509,7 +531,6 @@ public class CloudClientApplicationTests {
             } catch (InvalidProtocolBufferException e) {
                 e.printStackTrace();
             }
-
 
 
             // 方式三 InputStream
