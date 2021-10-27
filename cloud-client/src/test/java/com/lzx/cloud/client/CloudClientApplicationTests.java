@@ -581,10 +581,18 @@ public class CloudClientApplicationTests {
 //                .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png")), 1.0f)
 //                .outputQuality(1.0f).toFile("/Users/lizhixin/Downloads/20211026193056-375-500.jpeg");
 
+//        //水印按裁剪比例缩放或扩大
+//        double sc = (double) 1600 / 1200;
+//        BufferedImage bufferedImage = Thumbnails.of(ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png"))).scale(sc).asBufferedImage();
+//        Thumbnails.of("/Users/lizhixin/Downloads/3312ff4dcb5b319e03635512458d909f.jpeg").size(1600, 1200)
+//                .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, bufferedImage, 1.0f)
+//                .outputQuality(1.0f).toFile("/Users/lizhixin/Downloads/20211026193056-375-500.jpeg");
+
+        //固定水印大小
         double sc = (double) 1600 / 1200;
         BufferedImage bufferedImage = Thumbnails.of(ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png"))).scale(sc).asBufferedImage();
         Thumbnails.of("/Users/lizhixin/Downloads/3312ff4dcb5b319e03635512458d909f.jpeg").size(1600, 1200)
-                .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, bufferedImage, 1.0f)
+                .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png")), 1.0f)
                 .outputQuality(1.0f).toFile("/Users/lizhixin/Downloads/20211026193056-375-500.jpeg");
     }
 
