@@ -27,6 +27,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -576,8 +577,14 @@ public class CloudClientApplicationTests {
      */
     @Test
     public void testImageThumbnails() throws IOException {
-        Thumbnails.of("/Users/lizhixin/Downloads/3312ff4dcb5b319e03635512458d909f.jpeg").size(375, 500)
-                .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png")), 1.0f)
+//        Thumbnails.of("/Users/lizhixin/Downloads/3312ff4dcb5b319e03635512458d909f.jpeg").size(375, 500)
+//                .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png")), 1.0f)
+//                .outputQuality(1.0f).toFile("/Users/lizhixin/Downloads/20211026193056-375-500.jpeg");
+
+        double sc = (double) 1600 / 1200;
+        BufferedImage bufferedImage = Thumbnails.of(ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png"))).scale(sc).asBufferedImage();
+        Thumbnails.of("/Users/lizhixin/Downloads/3312ff4dcb5b319e03635512458d909f.jpeg").size(1600, 1200)
+                .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, bufferedImage, 1.0f)
                 .outputQuality(1.0f).toFile("/Users/lizhixin/Downloads/20211026193056-375-500.jpeg");
     }
 
