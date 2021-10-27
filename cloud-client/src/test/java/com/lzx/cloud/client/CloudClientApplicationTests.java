@@ -14,6 +14,8 @@ import com.lzx.cloud.client.entity.User;
 import com.lzx.cloud.client.util.HttpUtils;
 import com.lzx.cloud.protoc.PersonTestProtos;
 import lombok.Data;
+import net.coobird.thumbnailator.Thumbnails;
+import net.coobird.thumbnailator.geometry.Positions;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
@@ -24,6 +26,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import javax.imageio.ImageIO;
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -563,6 +566,19 @@ public class CloudClientApplicationTests {
             private String name;
             private String color;
         }
+    }
+
+    /**
+     * 图片裁剪工具测试
+     *
+     * @author lizhixin
+     * @date 2021/10/27 10:31
+     */
+    @Test
+    public void testImageThumbnails() throws IOException {
+        Thumbnails.of("/Users/lizhixin/Downloads/3312ff4dcb5b319e03635512458d909f.jpeg").size(375, 500)
+                .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png")), 1.0f)
+                .outputQuality(1.0f).toFile("/Users/lizhixin/Downloads/20211026193056-375-500.jpeg");
     }
 
 }
