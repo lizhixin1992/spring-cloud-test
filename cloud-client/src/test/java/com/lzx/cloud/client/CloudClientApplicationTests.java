@@ -52,6 +52,8 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 
@@ -594,6 +596,54 @@ public class CloudClientApplicationTests {
         Thumbnails.of("/Users/lizhixin/Downloads/3312ff4dcb5b319e03635512458d909f.jpeg").size(1600, 1200)
                 .keepAspectRatio(false).watermark(Positions.BOTTOM_RIGHT, ImageIO.read(new File("/Users/lizhixin/Downloads/ceshishuiyin.png")), 1.0f)
                 .outputQuality(1.0f).toFile("/Users/lizhixin/Downloads/20211026193056-375-500.jpeg");
+    }
+    
+    
+    
+    @Test
+    public void testPattern(){
+        String content = "<p>ewewe</p><p>eweweewew<strong>eweewew</strong></p><p><strong><em>ewewewe</em></strong><strong><em><span style=\"text-decoration: underline;\">ewewewew</span></em></strong><strong><em><span style=\"text-decoration: line-through;\">wewewewew<sub>ewewewe</sub></span></em></strong><strong><em><span style=\"text-decoration: line-through;\"><sub><span style=\"text-decoration: line-through; border: 1px solid rgb(0, 0, 0);\">ewewewewewewewewewew</span></sub></span></em></strong></p><p><strong><em><span style=\"text-decoration: line-through;\"><sub><span style=\"text-decoration: line-through; border: 1px solid rgb(0, 0, 0);\"></span></sub></span></em></strong></p><p style=\"text-align: center;\" class=\"photo_img_20190808\"><img src=\"/photoworkspace/contentimg/2022/01/23/2022012310370951480.JPG\" alt=\"\"/></p><p style=\"text-align: center;\">[!--begin:htmlVideoCode--]06f7cae7cb1c46a1f6d1ed9a50bba339,0,0,,news[!--end:htmlVideoCode--]</p><p><strong><em><span style=\"text-decoration: line-through;\"><sub><span style=\"text-decoration: line-through; border: 1px solid rgb(0, 0, 0);\"></span></sub></span></em></strong></p><p style=\"text-align: center;\">[!--begin:htmlVideoCode--]3243868163c84477b3ff5785f8a35ff9,2,1,,news[!--end:htmlVideoCode--]</p><p style=\"text-align: center;\">[!--begin:htmlVideoCode--]240cd961fb82430e88430e5095b67481,5,1,16:9,news[!--end:htmlVideoCode--]</p><p style=\"text-align: center;\">[!--begin:htmlVideoCode--]92db1bee70ec4db0b660715cdb644280,6,1,9:16,news[!--end:htmlVideoCode--]</p><p style=\"text-align: center;\">[!--begin:htmlVideoCode--]5be80e4bb7cd4fcf86759e14b0a529ea,7,1,16:9,news[!--end:htmlVideoCode--]</p><p><strong><em><span style=\"text-decoration: line-through;\"><sub><span style=\"text-decoration: line-through; border: 1px solid rgb(0, 0, 0);\"><br/></span></sub></span></em></strong><br/></p> ";
+        Pattern pattern = Pattern.compile("(\\[!--begin:.*?\\[!--end:htmlVideoCode--\\])");
+        Matcher matcher = pattern.matcher(content);
+        String guidContent;
+        while (matcher.find()) {
+            guidContent = matcher.group();
+            Matcher m2 = Pattern.compile("(\\[!--begin:htmlVideoCode--\\])(.*?)(\\[!--end:htmlVideoCode--\\]$)").matcher(guidContent);
+            while (m2.find()) {
+                String group = m2.group(2);
+                String[] split = group.split(",");
+                String guid = split[0];
+                String videoType = split[1];
+                System.out.println(guid + "-----" +videoType);
+                String replaceHtml = "<video src=\""+1+"\" controls=\"controls\" width=\"300\" height=\"150\"></video>";
+                if("2".equals(videoType)){
+                    replaceHtml = "<audio src=\""+2+"\" controls=\"controls\"></audio>";
+                }
+                content = content.replace(guidContent, replaceHtml);
+            }
+        }
+        System.out.println(content);
+    }
+
+    @Test
+    public void testLength(){
+        String sequence = "वैज्ञानिक प्राविधिक हिउँदे ओलम्पिकको संयुक्त उपभोग पहिलो विश्व संचार सिर्जना मंचमा सहभागी नेपालका पत्रकारको अनुभव";
+        System.out.println(sequence.length());
+        int count = 0;
+        for (int i = 0, len = sequence.length(); i < len; i++) {
+            char ch = sequence.charAt(i);
+            if (ch <= 0x7F) {
+                count++;
+            } else if (ch <= 0x7FF) {
+                count += 2;
+            } else if (Character.isHighSurrogate(ch)) {
+                count += 4;
+                ++i;
+            } else {
+                count += 3;
+            }
+        }
+        System.out.println(count);
     }
 
 }
